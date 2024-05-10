@@ -23,7 +23,7 @@ public class Bueno {
             con = DriverManager.getConnection(url, userName, password);
             System.out.println("Conexión establecida con éxito");
             
-            /*java.sql.Statement stmt = con.createStatement();
+            java.sql.Statement stmt = con.createStatement();
             String sql ="SELECT * FROM Clientes";
             java.sql.ResultSet rs = stmt.executeQuery(sql);
             while(rs.next()) {
@@ -31,7 +31,7 @@ public class Bueno {
             	String Nombre = rs.getString("Nombre");
             	String Email = rs.getString("Email");
             	System.out.println(idCliente+" "+Nombre+" "+Email);
-            }*/
+            }
         } catch (SQLException e) {
             System.out.println("Error al conectar a la base de datos: " + e.getMessage());
         }
