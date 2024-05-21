@@ -43,7 +43,7 @@ public class AñadirRecorrido extends JFrame {
 	}
 
 	public void volver() {
-		ProyectoProgramacion form=new ProyectoProgramacion();
+		Admin form=new Admin();
 		form.setVisible(true);
 		this.dispose();
 	}

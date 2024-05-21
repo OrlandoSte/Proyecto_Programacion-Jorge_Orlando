@@ -17,14 +17,16 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
 
-public class AñadirClub extends JFrame {
+public class AñadirPatrocinador extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField tNombre;
 	private JTextField tDireccion;
-	private JTextField tTelefono;
-	private JTextField tResponsable;
+	private JTextField tPcontacto;
+	private JTextField tLocalidad;
+	private JTextField tCodPostal;
+	private JTextField tProvincia;
 
 	/**
 	 * Launch the application.
@@ -33,7 +35,7 @@ public class AñadirClub extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AñadirClub frame = new AñadirClub();
+					AñadirPatrocinador frame = new AñadirPatrocinador();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +52,7 @@ public class AñadirClub extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AñadirClub() {
+	public AñadirPatrocinador() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 527, 415);
 		contentPane = new JPanel();
@@ -63,40 +65,58 @@ public class AñadirClub extends JFrame {
 		nombre.setBounds(71, 26, 70, 15);
 		contentPane.add(nombre);
 		
+		JLabel personaContacto = new JLabel("Persona de contacto:");
+		personaContacto.setBounds(71, 53, 152, 15);
+		contentPane.add(personaContacto);
+		
 		JLabel Direccion = new JLabel("Dirección:");
-		Direccion.setBounds(71, 53, 70, 15);
+		Direccion.setBounds(71, 80, 70, 15);
 		contentPane.add(Direccion);
 		
-		JLabel Telefono = new JLabel("Teléfono:");
-		Telefono.setBounds(71, 80, 70, 15);
-		contentPane.add(Telefono);
+		JLabel cod_postal = new JLabel("Código Postal:");
+		cod_postal.setBounds(71, 135, 105, 15);
+		contentPane.add(cod_postal);
 		
-		JLabel Responsable = new JLabel("Responsable:");
-		Responsable.setBounds(71, 107, 105, 15);
-		contentPane.add(Responsable);
+		JLabel Localidad = new JLabel("Localidad:");
+		Localidad.setBounds(71, 107, 105, 15);
+		contentPane.add(Localidad);
+		
+		JLabel Provincia = new JLabel("Provincia:");
+		Provincia.setBounds(71, 167, 105, 15);
+		contentPane.add(Provincia);
 		
 		tNombre = new JFormattedTextField();
 		tNombre.setBounds(141, 24, 114, 19);
 		contentPane.add(tNombre);
 		tNombre.setColumns(10);
 		
+		tPcontacto = new JTextField();
+		tPcontacto.setBounds(151, 78, 114, 19);
+		contentPane.add(tPcontacto);
+		tPcontacto.setColumns(10);
+		
 		tDireccion = new JTextField();
-		tDireccion.setBounds(151, 51, 114, 19);
+		tDireccion.setBounds(241, 51, 114, 19);
 		contentPane.add(tDireccion);
 		tDireccion.setColumns(10);
 		
-		tTelefono = new JTextField();
-		tTelefono.setBounds(151, 78, 114, 19);
-		contentPane.add(tTelefono);
-		tTelefono.setColumns(10);
+		tCodPostal = new JTextField();
+		tCodPostal.setBounds(180, 133, 114, 19);
+		contentPane.add(tCodPostal);
+		tCodPostal.setColumns(10);
 		
-		tResponsable = new JTextField();
-		tResponsable.setBounds(180, 105, 114, 19);
-		contentPane.add(tResponsable);
-		tResponsable.setColumns(10);
+		tLocalidad = new JTextField();
+		tLocalidad.setBounds(161, 105, 114, 19);
+		contentPane.add(tLocalidad);
+		tLocalidad.setColumns(10);
+		
+		tProvincia = new JTextField();
+		tProvincia.setBounds(167, 165, 114, 19);
+		contentPane.add(tProvincia);
+		tProvincia.setColumns(10);
 		
 
-		JButton btnAñadirClub = new JButton("Añadir Club");
+		JButton btnAñadirClub = new JButton("Añadir Patrocinador");
 		btnAñadirClub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -117,20 +137,22 @@ public class AñadirClub extends JFrame {
 				            java.sql.Statement stmt = con.createStatement();
 				            PreparedStatement stm = null;
 				            
-				            String sql1 ="SELECT codigo_club FROM CLUB order by codigo_club desc limit 1";
+				            String sql1 ="SELECT codigo_patrocinador FROM PATROCINADOR order by codigo_patrocinador desc limit 1";
 				            java.sql.ResultSet rs = stmt.executeQuery(sql1);
-				            int codigo_club_Ultimo=0;
+				            int codigo_patr_Ultimo=0;
 				            while(rs.next()) {
-				            	codigo_club_Ultimo = rs.getInt("codigo_club");
+				            	codigo_patr_Ultimo = rs.getInt("codigo_club");
 				            }
 				            
-				            String insert = "INSERT INTO CLUB (codigo_club, nombre, dirección, teléfono, responsable) VALUES (?,?,?,?,?)";
+				            String insert = "INSERT INTO PATROCINADOR (codigo_patrocinador, nombre, persona_contacto, direccion, codigo_postal, localidad, provincia) VALUES (?,?,?,?,?,?,?)";
 				            stm = con.prepareStatement(insert);
-				            stm.setInt(1, codigo_club_Ultimo+1);
+				            stm.setInt(1, codigo_patr_Ultimo+1);
 				            stm.setString(2, tNombre.getText());
-				            stm.setString(3, tDireccion.getText());
-				            stm.setString(4, tTelefono.getText());
-				            stm.setString(5, tResponsable.getText());
+				            stm.setString(3, tPcontacto.getText());
+				            stm.setString(4, tDireccion.getText());
+				            stm.setString(5, tCodPostal.getText());
+				            stm.setString(6, tLocalidad.getText());
+				            stm.setString(7, tProvincia.getText());
 				            stm.executeUpdate();
 				        } 
 				        
