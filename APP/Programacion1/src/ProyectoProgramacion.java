@@ -37,6 +37,17 @@ public class ProyectoProgramacion extends JFrame {
 		form.setVisible(true);
 		this.dispose();
 	}
+	
+	public void abrirAdministrador() {
+		Admin form=new Admin();
+		form.setVisible(true);
+		this.dispose();
+	}
+	public void abrirLogin() {
+		Login form=new Login();
+		form.setVisible(true);
+		this.dispose();
+	}
 	/*public void abrirInformacion() {
 		Informacion form2=new Informacion();
 		form2.setVisible(true);
@@ -68,5 +79,14 @@ public class ProyectoProgramacion extends JFrame {
 		});
 		INSCRIBIRSE.setBounds(163, 130, 117, 25);
 		contentPane.add(INSCRIBIRSE);
+		
+		JButton btnAdministrador = new JButton("Administrador");
+		btnAdministrador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			abrirLogin();
+			}
+		});
+		btnAdministrador.setBounds(163, 189, 134, 25);
+		contentPane.add(btnAdministrador);
 	}
 }
