@@ -526,13 +526,14 @@ public class AñadirPErsona extends JFrame {
 				
 				if(rdbtnCorredor.isSelected()) {
 				calcularCarrera();
-				String insert2 = "INSERT INTO CORREDOR (club, dorsal, tiempo, codigo_carrera,codigo_persona) VALUES (?,?,?,?,?)";
+				String insert2 = "INSERT INTO CORREDOR (club, dorsal, tiempo, codigo_carrera,codigo_persona,valido) VALUES (?,?,?,?,?,?)";
 				stmi = con.prepareStatement(insert2);
 				stmi.setInt(1, codigoClub);
 				stmi.setInt(2, idClienteUltimo + 1);
 				stmi.setString(3, null);
 				stmi.setInt(4, calcularCarrera());
 				stmi.setInt(5, idClienteUltimo + 1);
+				stmi.setString(6, "t");
 				int retorno2 = stmi.executeUpdate();
 				}
 				
