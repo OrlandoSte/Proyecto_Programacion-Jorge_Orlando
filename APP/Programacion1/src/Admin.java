@@ -53,7 +53,7 @@ public class Admin extends JFrame {
 		this.dispose();
 	}
 	public void abrirPersona() {
-		AñadirPErsona form=new AñadirPErsona();
+		AñadirPersona form=new AñadirPersona();
 		form.setVisible(true);
 		this.dispose();
 	}

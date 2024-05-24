@@ -20,192 +20,182 @@ import com.mysql.cj.xdevapi.Statement;
 
 public class ValidarInscripcion extends JFrame {
 
-    private static final long serialVersionUID = 1L;
-    private JPanel contentPane;
-    private JTextField textField;
-    private JTable table;
-    private DefaultTableModel tableModel;
-    private JTextField textField_1;
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                	ValidarInscripcion frame = new ValidarInscripcion();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTable table;
+	private DefaultTableModel tableModel;
+	private JTextField textField_1;
+	private Conexion conA = new Conexion();
+	private Connection con = conA.abrirConexion();
 
-    public void abrirAdmin() {
-        Admin form = new Admin();
-        form.setVisible(true);
-        this.dispose();
-    }
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ValidarInscripcion frame = new ValidarInscripcion();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
-    /**
-     * Create the frame.
-     */
-    public ValidarInscripcion() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 906, 506);
-        contentPane = new JPanel();
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+	public void abrirAdmin() {
+		Admin form = new Admin();
+		form.setVisible(true);
+		this.dispose();
+	}
 
-        setContentPane(contentPane);
-        contentPane.setLayout(null);
+	/**
+	 * Create the frame.
+	 */
+	public ValidarInscripcion() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 906, 506);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-        JScrollPane scrollPane = new JScrollPane();
-        scrollPane.setBounds(12, 0, 855, 418);
-        contentPane.add(scrollPane);
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
 
-        tableModel = new DefaultTableModel(
-            new Object[]{"Persona", "Detalles Persona", "Detalles Corredor"}, 0);
-        table = new JTable(tableModel);
-        scrollPane.setViewportView(table);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 0, 855, 418);
+		contentPane.add(scrollPane);
 
-        textField = new JTextField();
-        textField.setBounds(581, 438, 114, 19);
-        contentPane.add(textField);
-        textField.setColumns(10);
+		tableModel = new DefaultTableModel(new Object[] { "Persona", "Detalles Persona", "Detalles Corredor" }, 0);
+		table = new JTable(tableModel);
+		scrollPane.setViewportView(table);
 
-        JLabel lblCdigoQueQuieres = new JLabel("Código para validar:");
-        lblCdigoQueQuieres.setBounds(563, 421, 143, 15);
-        contentPane.add(lblCdigoQueQuieres);
-        
-        
+		textField = new JTextField();
+		textField.setBounds(581, 438, 114, 19);
+		contentPane.add(textField);
+		textField.setColumns(10);
 
-        JButton btnValidar = new JButton("VALIDAR");
-        btnValidar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                String userName = "bd";
-                String password = "proyecto";
-                String url = "jdbc:mysql://192.168.11.155:3306/ProyectoProgramación";
+		JLabel lblCdigoQueQuieres = new JLabel("Código para validar:");
+		lblCdigoQueQuieres.setBounds(563, 421, 143, 15);
+		contentPane.add(lblCdigoQueQuieres);
 
-                Connection con = null;
-                PreparedStatement pstmt = null;
-                try {
-                    con = DriverManager.getConnection(url, userName, password);
+		JButton btnValidar = new JButton("VALIDAR");
+		btnValidar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
 
-                    String b = textField.getText();
-                    String update = "UPDATE CORREDOR SET valido='t' where codigo_persona="+b;
-                    pstmt = con.prepareStatement(update);
-                    pstmt.executeUpdate();
-                    
+				PreparedStatement pstmt = null;
+				try {
 
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+					String b = textField.getText();
+					String update = "UPDATE CORREDOR SET valido='t' where codigo_persona=" + b;
+					pstmt = con.prepareStatement(update);
+					pstmt.executeUpdate();
 
-        btnValidar.setBounds(439, 430, 117, 25);
-        contentPane.add(btnValidar);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		});
 
-        JButton btnVolver = new JButton("VOLVER");
-        btnVolver.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                abrirAdmin();
-            }
-        });
-        btnVolver.setBounds(12, 430, 104, 25);
-        contentPane.add(btnVolver);
+		btnValidar.setBounds(439, 430, 117, 25);
+		contentPane.add(btnValidar);
 
-        
-        JButton btnActualizar = new JButton("BORRAR");
-        btnActualizar.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent arg0) {
-        		int fila=table.getSelectedRow();
-        		String userName = "bd";
-                String password = "proyecto";
-                String url = "jdbc:mysql://192.168.11.155:3306/ProyectoProgramación";
-                PreparedStatement pstmt = null;
+		JButton btnVolver = new JButton("VOLVER");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				abrirAdmin();
+			}
+		});
+		btnVolver.setBounds(12, 430, 104, 25);
+		contentPane.add(btnVolver);
 
-                Connection con;
-                try {
-					con = DriverManager.getConnection(url, userName, password);
-					
+		JButton btnActualizar = new JButton("BORRAR");
+		btnActualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				PreparedStatement pstmt = null;
+
+				try {
+
 					String b = textField_1.getText();
-                    String update = "DELETE FROM CORREDOR where codigo_persona="+b;
-                    pstmt = con.prepareStatement(update);
-                    pstmt.executeUpdate();
-                    System.out.println(b);
+					String update = "DELETE FROM CORREDOR where codigo_persona=" + b;
+					pstmt = con.prepareStatement(update);
+					pstmt.executeUpdate();
+					
+					String b1 = textField_1.getText();
+					String update1 = "DELETE FROM PERSONA where codigo_persona=" + b1;
+					pstmt = con.prepareStatement(update1);
+					pstmt.executeUpdate();
+					
+					System.out.println(b);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}	
-				
-        	}
-        });
-        btnActualizar.setBounds(128, 430, 134, 25);
-        contentPane.add(btnActualizar);
-        
-        textField_1 = new JTextField();
-        textField_1.setBounds(288, 438, 104, 19);
-        contentPane.add(textField_1);
-        textField_1.setColumns(10);
-        
-        JLabel lblCdigoParaBorrar = new JLabel("Código para borrar:");
-        lblCdigoParaBorrar.setBounds(268, 421, 153, 15);
-        contentPane.add(lblCdigoParaBorrar);
+				}
 
-        loadTableData();
-    }
+			}
+		});
+		btnActualizar.setBounds(128, 430, 134, 25);
+		contentPane.add(btnActualizar);
 
-    private void loadTableData() {
-        String userName = "bd";
-        String password = "proyecto";
-        String url = "jdbc:mysql://192.168.11.155:3306/ProyectoProgramación";
+		textField_1 = new JTextField();
+		textField_1.setBounds(288, 438, 104, 19);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
 
-        Connection con;
-        try {
-            con = DriverManager.getConnection(url, userName, password);
+		JLabel lblCdigoParaBorrar = new JLabel("Código para borrar:");
+		lblCdigoParaBorrar.setBounds(268, 421, 153, 15);
+		contentPane.add(lblCdigoParaBorrar);
 
-            java.sql.Statement stmt = con.createStatement();
-            java.sql.Statement stmt2 = con.createStatement();
+		loadTableData();
+	}
 
-            String sql1 = "SELECT * FROM PERSONA where codigo_persona in (SELECT codigo_persona FROM CORREDOR where valido='f')";
-            ResultSet rs = stmt.executeQuery(sql1);
+	private void loadTableData() {
+		try {
 
-            String sql2 = "SELECT * FROM CORREDOR where valido='f'";
-            ResultSet rt = stmt2.executeQuery(sql2);
+			java.sql.Statement stmt = con.createStatement();
+			java.sql.Statement stmt2 = con.createStatement();
 
-            tableModel.setRowCount(0); // Clear existing data
+			String sql1 = "SELECT * FROM PERSONA where codigo_persona in (SELECT codigo_persona FROM CORREDOR where valido='f')";
+			ResultSet rs = stmt.executeQuery(sql1);
 
-            while (rs.next() && rt.next()) {
-                int var1 = rs.getInt(1);
-                String var2 = rs.getString(2);
-                String var3 = rs.getString(3);
-                String var4 = rs.getString(4);
-                String var5 = rs.getString(5);
-                String var6 = rs.getString(6);
-                String var7 = rs.getString(7);
-                String var8 = rs.getString(8);
-                String var9 = rs.getString(9);
-                String var10 = rs.getString(10);
-                String var11 = rs.getString(11);
+			String sql2 = "SELECT * FROM CORREDOR where valido='f'";
+			ResultSet rt = stmt2.executeQuery(sql2);
 
-                String personaDetails = var1 + "  " + var2 + "  " + var3 + "  " + var4 + "  " + var5 + "  " + var6 + "  " + var7 + "  " + var8 + "  " + var9 + "  " + var10 + "  " + var11;
+			tableModel.setRowCount(0); // Clear existing data
 
-                int var111 = rt.getInt(1);
-                int var112 = rt.getInt(2);
-                String var113 = rt.getString(3);
-                int var114 = rt.getInt(4);
-                int var115 = rt.getInt(5);
-                String var116 = rt.getString(6);
+			while (rs.next() && rt.next()) {
+				int var1 = rs.getInt(1);
+				String var2 = rs.getString(2);
+				String var3 = rs.getString(3);
+				String var4 = rs.getString(4);
+				String var5 = rs.getString(5);
+				String var6 = rs.getString(6);
+				String var7 = rs.getString(7);
+				String var8 = rs.getString(8);
+				String var9 = rs.getString(9);
+				String var10 = rs.getString(10);
+				String var11 = rs.getString(11);
 
-                String corredorDetails = var111 + " " + var112 + " " + var113 + " " + var114 + " " + var115 + " " + var116;
+				String personaDetails = var1 + "  " + var2 + "  " + var3 + "  " + var4 + "  " + var5 + "  " + var6
+						+ "  " + var7 + "  " + var8 + "  " + var9 + "  " + var10 + "  " + var11;
 
-                tableModel.addRow(new Object[]{"Persona " + var1, personaDetails, corredorDetails});
-            }
+				int var111 = rt.getInt(1);
+				int var112 = rt.getInt(2);
+				String var113 = rt.getString(3);
+				int var114 = rt.getInt(4);
+				int var115 = rt.getInt(5);
+				String var116 = rt.getString(6);
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+				String corredorDetails = var111 + " " + var112 + " " + var113 + " " + var114 + " " + var115 + " "
+						+ var116;
+
+				tableModel.addRow(new Object[] { "Persona " + var1, personaDetails, corredorDetails });
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

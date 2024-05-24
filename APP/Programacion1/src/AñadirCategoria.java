@@ -23,6 +23,8 @@ public class AñadirCategoria extends JFrame {
 	private JPanel contentPane;
 	private JTextField tNombre;
 	private JTextField tEdad;
+    private Conexion conA = new Conexion();
+    private Connection con = conA.abrirConexion();
 
 	/**
 	 * Launch the application.
@@ -41,35 +43,36 @@ public class AñadirCategoria extends JFrame {
 	}
 
 	public void volver() {
-		Admin form=new Admin();
+		Admin form = new Admin();
 		form.setVisible(true);
 		this.dispose();
 	}
+
 	/**
 	 * Create the frame.
 	 */
 	public AñadirCategoria() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 527, 415);
+		setBounds(100, 100, 512, 155);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel Nombre = new JLabel("Nombre:");
-		Nombre.setBounds(71, 26, 94, 15);
+		Nombre.setBounds(71, 26, 60, 15);
 		contentPane.add(Nombre);
-		
-		JLabel Edad = new JLabel("Edad:");
-		Edad.setBounds(71, 53, 94, 15);
+
+		JLabel Edad = new JLabel("Edad Min/Max:");
+		Edad.setBounds(30, 70, 101, 15);
 		contentPane.add(Edad);
-		
+
 		tNombre = new JFormattedTextField();
-		tNombre.setBounds(165, 24, 114, 19);
+		tNombre.setBounds(149, 24, 114, 19);
 		contentPane.add(tNombre);
 		tNombre.setColumns(10);
-		
+
 		MaskFormatter formatter = null;
 		try {
 			formatter = new MaskFormatter("##-##");
@@ -77,69 +80,53 @@ public class AñadirCategoria extends JFrame {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		tEdad = new JFormattedTextField(formatter);
-		tEdad.setBounds(165, 53, 114, 19);
+		tEdad.setBounds(149, 68, 114, 19);
 		contentPane.add(tEdad);
 		tEdad.setColumns(10);
-		
 
-		JButton btnAñadirCategoria = new JButton("Añadir Categoría");
+		JButton btnAñadirCategoria = new JButton("Añadir");
 		btnAñadirCategoria.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-		        	Connection con;
-				  
-					
 
+				try {
 
-				    
-				        try {
-				            String userName = "bd";
-				            String password = "proyecto";
-				            String url = "jdbc:mysql://192.168.11.155:3306/ProyectoProgramación";
-				            
-				            con = DriverManager.getConnection(url, userName, password);
-				            System.out.println("Has introducido el recorrido correctamente");
-				            
-				            java.sql.Statement stmt = con.createStatement();
-				            PreparedStatement stm = null;
-				            
-				            String sql1 ="SELECT codigo_categoria FROM CATEGORIA order by codigo_categoria desc limit 1";
-				            java.sql.ResultSet rs = stmt.executeQuery(sql1);
-				            int codigo_recorrido_Ultimo=0;
-				            while(rs.next()) {
-				            	codigo_recorrido_Ultimo = rs.getInt("codigo_categoria");
-				            }
-				            
-				            String insert = "INSERT INTO CATEGORIA (codigo_categoria, nombre, edad) VALUES (?,?,?)";
-				            stm = con.prepareStatement(insert);
-				            stm.setInt(1, codigo_recorrido_Ultimo+1);
-				            stm.setString(2, tNombre.getText());
-				            stm.setString(3, tEdad.getText());
-				            stm.executeUpdate();
-				        } 
-				        
-				        		
-					        
-				 
-				        catch (SQLException e) {
-				            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
-				        }
-		        
-		        
-			
-			}});
-		btnAñadirCategoria.setBounds(363, 285, 152, 25);
+					java.sql.Statement stmt = con.createStatement();
+					PreparedStatement stm = null;
+
+					String sql1 = "SELECT codigo_categoria FROM CATEGORIA order by codigo_categoria desc limit 1";
+					java.sql.ResultSet rs = stmt.executeQuery(sql1);
+					int codigo_recorrido_Ultimo = 0;
+					while (rs.next()) {
+						codigo_recorrido_Ultimo = rs.getInt("codigo_categoria");
+					}
+
+					String insert = "INSERT INTO CATEGORIA (codigo_categoria, nombre, edad) VALUES (?,?,?)";
+					stm = con.prepareStatement(insert);
+					stm.setInt(1, codigo_recorrido_Ultimo + 1);
+					stm.setString(2, tNombre.getText());
+					stm.setString(3, tEdad.getText());
+					stm.executeUpdate();
+					System.out.println("Has introducido el recorrido correctamente");
+				}
+
+				catch (SQLException e) {
+					System.out.println("Error al conectar a la base de datos: " + e.getMessage());
+				}
+
+			}
+		});
+		btnAñadirCategoria.setBounds(355, 65, 117, 25);
 		contentPane.add(btnAñadirCategoria);
-		
+
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				volver();
 			}
 		});
-		btnVolver.setBounds(378, 21, 117, 25);
+		btnVolver.setBounds(355, 16, 117, 25);
 		contentPane.add(btnVolver);
 	}
 
