@@ -40,50 +40,48 @@ public class Login extends JFrame {
 	@SuppressWarnings("deprecation")
 	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 317, 205);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblUsuario = new JLabel("Usuario:");
-		lblUsuario.setBounds(12, 27, 70, 15);
+		lblUsuario.setBounds(78, 27, 60, 15);
 		contentPane.add(lblUsuario);
-		
+
 		JLabel lblContrasea = new JLabel("Contraseña:");
-		lblContrasea.setBounds(12, 62, 88, 15);
+		lblContrasea.setBounds(50, 62, 88, 15);
 		contentPane.add(lblContrasea);
-		
+
 		tUsuario = new JTextField();
-		tUsuario.setBounds(100, 25, 114, 19);
+		tUsuario.setBounds(147, 25, 114, 19);
 		contentPane.add(tUsuario);
 		tUsuario.setColumns(10);
-		
+
 		tContrasena = new JPasswordField();
-		tContrasena.setBounds(110, 60, 104, 19);
+		tContrasena.setBounds(147, 60, 114, 19);
 		contentPane.add(tContrasena);
-		
+
 		btnEntrar = new JButton("Entrar");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(tUsuario.getText().equals("Jorge") && tContrasena.getText().equals("Jorge")) {
+				if (tUsuario.getText().equals("Jorge") && tContrasena.getText().equals("Jorge")) {
 					abrirAdmin();
 				}
-				if(tUsuario.getText().equals("Orlo") && tContrasena.getText().equals("Orlo")) {
+				if (tUsuario.getText().equals("Orlo") && tContrasena.getText().equals("Orlo")) {
 					abrirAdmin();
 				}
 			}
 		});
-		btnEntrar.setBounds(97, 110, 117, 25);
+		btnEntrar.setBounds(107, 94, 117, 25);
 		contentPane.add(btnEntrar);
-		
-		
-		
-		
+
 	}
+
 	public void abrirAdmin() {
-		Admin form=new Admin();
+		Admin form = new Admin();
 		form.setVisible(true);
 		this.dispose();
 	}

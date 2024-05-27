@@ -23,6 +23,8 @@ public class AñadirPuesto extends JFrame {
 	private JPanel contentPane;
 	private JTextField tNombre;
 	private JTextField tCometido;
+	private Conexion conA = new Conexion();
+	private Connection con = conA.abrirConexion();
 
 	/**
 	 * Launch the application.
@@ -41,88 +43,73 @@ public class AñadirPuesto extends JFrame {
 	}
 
 	public void volver() {
-		Admin form=new Admin();
+		Admin form = new Admin();
 		form.setVisible(true);
 		this.dispose();
 	}
+
 	/**
 	 * Create the frame.
 	 */
 	public AñadirPuesto() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 527, 415);
+		setBounds(100, 100, 539, 214);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel nombre = new JLabel("Nombre:");
-		nombre.setBounds(71, 26, 70, 15);
+		nombre.setBounds(83, 59, 60, 15);
 		contentPane.add(nombre);
-		
+
 		JLabel Cometido = new JLabel("Cometido:");
-		Cometido.setBounds(71, 55, 105, 15);
+		Cometido.setBounds(71, 86, 72, 15);
 		contentPane.add(Cometido);
-		
+
 		tNombre = new JTextField();
-		tNombre.setBounds(141, 24, 114, 19);
+		tNombre.setBounds(151, 57, 114, 19);
 		contentPane.add(tNombre);
 		tNombre.setColumns(10);
-		
+
 		tCometido = new JTextField();
-		tCometido.setBounds(151, 53, 114, 19);
+		tCometido.setBounds(151, 84, 114, 19);
 		contentPane.add(tCometido);
 		tCometido.setColumns(10);
-		
 
-		JButton btnAñadirClub = new JButton("Añadir Puesto");
+		JButton btnAñadirClub = new JButton("Añadir");
 		btnAñadirClub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-		        	Connection con;
-				  
-					
+				try {
 
+					System.out.println("Has introducido el club correctamente");
 
-				    
-				        try {
-				            String userName = "bd";
-				            String password = "proyecto";
-				            String url = "jdbc:mysql://192.168.11.155:3306/ProyectoProgramación";
-				            
-				            con = DriverManager.getConnection(url, userName, password);
-				            System.out.println("Has introducido el club correctamente");
-				            
-				            PreparedStatement stm = null;
-				            
-				            String insert = "INSERT INTO PUESTO (nombre, cometido) VALUES (?,?)";
-				            stm = con.prepareStatement(insert);
-				            stm.setString(1, tNombre.getText());
-				            stm.setString(2, tCometido.getText());
-				            stm.executeUpdate();
-				        } 
-				        
-				        		
-					        
-				 
-				        catch (SQLException e) {
-				            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
-				        }
-		        
-		        
-			
-			}});
-		btnAñadirClub.setBounds(378, 291, 137, 25);
+					PreparedStatement stm = null;
+
+					String insert = "INSERT INTO PUESTO (nombre, cometido) VALUES (?,?)";
+					stm = con.prepareStatement(insert);
+					stm.setString(1, tNombre.getText());
+					stm.setString(2, tCometido.getText());
+					stm.executeUpdate();
+				}
+
+				catch (SQLException e) {
+					System.out.println("Error al conectar a la base de datos: " + e.getMessage());
+				}
+
+			}
+		});
+		btnAñadirClub.setBounds(368, 112, 117, 25);
 		contentPane.add(btnAñadirClub);
-		
+
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				volver();
 			}
 		});
-		btnVolver.setBounds(378, 21, 117, 25);
+		btnVolver.setBounds(368, 12, 117, 25);
 		contentPane.add(btnVolver);
 	}
 

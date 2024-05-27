@@ -68,7 +68,7 @@ public class ProyectoProgramacion extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		Informacion.setBounds(163, 71, 117, 25);
+		Informacion.setBounds(151, 71, 140, 25);
 		contentPane.add(Informacion);
 		
 		JButton INSCRIBIRSE = new JButton("Inscribirse");
@@ -77,7 +77,7 @@ public class ProyectoProgramacion extends JFrame {
 				abrirInscribirse();
 			}
 		});
-		INSCRIBIRSE.setBounds(163, 130, 117, 25);
+		INSCRIBIRSE.setBounds(151, 130, 140, 25);
 		contentPane.add(INSCRIBIRSE);
 		
 		JButton btnAdministrador = new JButton("Administrador");
@@ -86,7 +86,7 @@ public class ProyectoProgramacion extends JFrame {
 			abrirLogin();
 			}
 		});
-		btnAdministrador.setBounds(163, 189, 134, 25);
+		btnAdministrador.setBounds(151, 189, 140, 25);
 		contentPane.add(btnAdministrador);
 	}
 }

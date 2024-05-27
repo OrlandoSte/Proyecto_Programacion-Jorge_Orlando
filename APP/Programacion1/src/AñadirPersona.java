@@ -27,7 +27,7 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 import javax.swing.JRadioButton;
 
-public class AñadirPErsona extends JFrame {
+public class AñadirPersona extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -53,6 +53,9 @@ public class AñadirPErsona extends JFrame {
 	private JLabel lblFechaContratoFinal;
 	private JLabel lblVoluntariosiLoHas;
 	private JLabel lblPuesto_1;
+	private Conexion conA = new Conexion();
+	private Connection con = conA.abrirConexion();
+
 	/**
 	 * Launch the application.
 	 */
@@ -67,7 +70,7 @@ public class AñadirPErsona extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AñadirPErsona frame = new AñadirPErsona();
+					AñadirPersona frame = new AñadirPersona();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -79,7 +82,7 @@ public class AñadirPErsona extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AñadirPErsona() {
+	public AñadirPersona() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 892, 553);
 		contentPane = new JPanel();
@@ -89,19 +92,19 @@ public class AñadirPErsona extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel DNI = new JLabel("DNI:");
-		DNI.setBounds(71, 26, 70, 15);
+		DNI.setBounds(191, 26, 29, 15);
 		contentPane.add(DNI);
 
 		JLabel Nombre = new JLabel("Nombre:");
-		Nombre.setBounds(71, 53, 70, 15);
+		Nombre.setBounds(160, 53, 60, 15);
 		contentPane.add(Nombre);
 
 		JLabel Apellidos = new JLabel("Apellidos:");
-		Apellidos.setBounds(71, 80, 70, 15);
+		Apellidos.setBounds(150, 80, 70, 15);
 		contentPane.add(Apellidos);
 
 		JLabel Sexo = new JLabel("Sexo(H/M):");
-		Sexo.setBounds(71, 107, 88, 15);
+		Sexo.setBounds(142, 107, 78, 15);
 		contentPane.add(Sexo);
 
 		JLabel FechaNacimiento = new JLabel("Fecha de nacimiento:");
@@ -109,27 +112,27 @@ public class AñadirPErsona extends JFrame {
 		contentPane.add(FechaNacimiento);
 
 		JLabel Direccion = new JLabel("Direccion:");
-		Direccion.setBounds(71, 161, 70, 15);
+		Direccion.setBounds(150, 161, 70, 15);
 		contentPane.add(Direccion);
 
 		JLabel CodigoPostal = new JLabel("Codigo postal:");
-		CodigoPostal.setBounds(71, 188, 128, 15);
+		CodigoPostal.setBounds(117, 188, 103, 15);
 		contentPane.add(CodigoPostal);
 
 		JLabel Localidad = new JLabel("Localidad:");
-		Localidad.setBounds(71, 215, 78, 15);
+		Localidad.setBounds(142, 215, 78, 15);
 		contentPane.add(Localidad);
 
 		JLabel Provincia = new JLabel("Provincia:");
-		Provincia.setBounds(71, 242, 70, 15);
+		Provincia.setBounds(150, 242, 70, 15);
 		contentPane.add(Provincia);
 
 		JLabel Telefono = new JLabel("Número de teléfono:");
-		Telefono.setBounds(71, 269, 157, 15);
+		Telefono.setBounds(71, 269, 149, 15);
 		contentPane.add(Telefono);
 
 		JLabel Club = new JLabel("Club(opcional):");
-		Club.setBounds(71, 296, 111, 15);
+		Club.setBounds(109, 296, 111, 15);
 		contentPane.add(Club);
 
 		MaskFormatter formatter = null;
@@ -141,17 +144,17 @@ public class AñadirPErsona extends JFrame {
 		}
 
 		tDNI = new JFormattedTextField(formatter);
-		tDNI.setBounds(114, 24, 114, 19);
+		tDNI.setBounds(230, 24, 114, 19);
 		contentPane.add(tDNI);
 		tDNI.setColumns(10);
 
 		tNombre = new JTextField();
-		tNombre.setBounds(141, 51, 114, 19);
+		tNombre.setBounds(230, 51, 114, 19);
 		contentPane.add(tNombre);
 		tNombre.setColumns(10);
 
 		tApellidos = new JTextField();
-		tApellidos.setBounds(151, 78, 114, 19);
+		tApellidos.setBounds(230, 78, 114, 19);
 		contentPane.add(tApellidos);
 		tApellidos.setColumns(10);
 
@@ -164,7 +167,7 @@ public class AñadirPErsona extends JFrame {
 		}
 
 		tSexo = new JFormattedTextField(formatter2);
-		tSexo.setBounds(161, 105, 114, 19);
+		tSexo.setBounds(230, 105, 114, 19);
 		contentPane.add(tSexo);
 		tSexo.setColumns(10);
 
@@ -182,22 +185,22 @@ public class AñadirPErsona extends JFrame {
 		tFechaNacimiento.setColumns(10);
 
 		tDireccion = new JTextField();
-		tDireccion.setBounds(159, 159, 114, 19);
+		tDireccion.setBounds(230, 159, 114, 19);
 		contentPane.add(tDireccion);
 		tDireccion.setColumns(10);
 
 		tCodigoPostal = new JTextField();
-		tCodigoPostal.setBounds(185, 186, 114, 19);
+		tCodigoPostal.setBounds(230, 186, 114, 19);
 		contentPane.add(tCodigoPostal);
 		tCodigoPostal.setColumns(10);
 
 		tLocalidad = new JTextField();
-		tLocalidad.setBounds(159, 215, 114, 19);
+		tLocalidad.setBounds(230, 213, 114, 19);
 		contentPane.add(tLocalidad);
 		tLocalidad.setColumns(10);
 
 		tProvincia = new JTextField();
-		tProvincia.setBounds(159, 240, 114, 19);
+		tProvincia.setBounds(230, 240, 114, 19);
 		contentPane.add(tProvincia);
 		tProvincia.setColumns(10);
 
@@ -207,7 +210,7 @@ public class AñadirPErsona extends JFrame {
 		tTelefono.setColumns(10);
 
 		tClub = new JComboBox<>();
-		tClub.setBounds(185, 294, 114, 19);
+		tClub.setBounds(230, 294, 114, 19);
 		contentPane.add(tClub);
 
 		desplegableClub();
@@ -218,7 +221,7 @@ public class AñadirPErsona extends JFrame {
 				volver();
 			}
 		});
-		btnVolver.setBounds(378, 21, 117, 25);
+		btnVolver.setBounds(587, 21, 117, 25);
 		contentPane.add(btnVolver);
 
 		JButton btnInscribirse = new JButton("Inscribirse");
@@ -227,71 +230,65 @@ public class AñadirPErsona extends JFrame {
 				añadirPersona();
 			}
 		});
-		btnInscribirse.setBounds(464, 450, 117, 25);
+		btnInscribirse.setBounds(587, 450, 117, 25);
 		contentPane.add(btnInscribirse);
-		
+
 		JLabel lblPuesto = new JLabel("Puesto:");
-		lblPuesto.setBounds(71, 323, 70, 15);
+		lblPuesto.setBounds(165, 323, 55, 15);
 		contentPane.add(lblPuesto);
-		
+
 		rdbtnTrabajador = new JRadioButton("Trabajador");
-		rdbtnTrabajador.setBounds(141, 319, 103, 23);
+		rdbtnTrabajador.setBounds(230, 321, 103, 23);
 		contentPane.add(rdbtnTrabajador);
-		
+
 		tFInicio = new JFormattedTextField(formatter3);
-		tFInicio.setBounds(301, 393, 114, 19);
+		tFInicio.setBounds(255, 379, 114, 19);
 		contentPane.add(tFInicio);
 		tFInicio.setColumns(10);
-		
+
 		tFFinal = new JFormattedTextField(formatter3);
-		tFFinal.setBounds(467, 393, 114, 19);
+		tFFinal.setBounds(397, 379, 114, 19);
 		contentPane.add(tFFinal);
 		tFFinal.setColumns(10);
-		
-		lblTrabajadorsiLoHas = new JLabel("Trabajador:(si lo has seleccionado)");
-		lblTrabajadorsiLoHas.setBounds(12, 352, 253, 15);
+
+		lblTrabajadorsiLoHas = new JLabel("Trabajador:(Si lo es)");
+		lblTrabajadorsiLoHas.setBounds(71, 352, 149, 15);
 		contentPane.add(lblTrabajadorsiLoHas);
-		
+
 		lblFechaContratoInicio = new JLabel("Fecha contrato inicio:");
-		lblFechaContratoInicio.setBounds(283, 352, 164, 15);
+		lblFechaContratoInicio.setBounds(230, 352, 157, 15);
 		contentPane.add(lblFechaContratoInicio);
-		
+
 		lblFechaContratoFinal = new JLabel("Fecha contrato final:");
-		lblFechaContratoFinal.setBounds(448, 352, 157, 15);
+		lblFechaContratoFinal.setBounds(387, 352, 157, 15);
 		contentPane.add(lblFechaContratoFinal);
-		
+
 		rdbtnCorredor = new JRadioButton("Corredor");
-		rdbtnCorredor.setBounds(255, 321, 88, 23);
+		rdbtnCorredor.setBounds(337, 321, 88, 23);
 		contentPane.add(rdbtnCorredor);
-		
+
 		rdbtnVoluntario = new JRadioButton("Voluntario");
-		rdbtnVoluntario.setBounds(354, 321, 149, 23);
+		rdbtnVoluntario.setBounds(429, 319, 103, 23);
 		contentPane.add(rdbtnVoluntario);
-		
-		lblVoluntariosiLoHas = new JLabel("Voluntario:(si lo has seleccionado)");
-		lblVoluntariosiLoHas.setBounds(12, 420, 253, 15);
+
+		lblVoluntariosiLoHas = new JLabel("Voluntario:(si lo es)");
+		lblVoluntariosiLoHas.setBounds(81, 420, 139, 15);
 		contentPane.add(lblVoluntariosiLoHas);
-		
+
 		tPuesto = new JComboBox<>();
-		tPuesto.setBounds(269, 450, 111, 25);
+		tPuesto.setBounds(290, 415, 111, 25);
 		contentPane.add(tPuesto);
-		
+
 		desplegablePuesto();
-		
+
 		lblPuesto_1 = new JLabel("Puesto:");
-		lblPuesto_1.setBounds(274, 420, 70, 15);
+		lblPuesto_1.setBounds(230, 420, 70, 15);
 		contentPane.add(lblPuesto_1);
 	}
-
-	String userName = "bd";
-	String password = "proyecto";
-	String url = "jdbc:mysql://192.168.11.155:3306/ProyectoProgramación";
-
 
 	private void desplegableClub() {
 		try {
 
-			Connection con = DriverManager.getConnection(url, userName, password);
 			String query = "SELECT nombre FROM CLUB";
 			PreparedStatement stmt = con.prepareStatement(query);
 			ResultSet rs = stmt.executeQuery();
@@ -300,18 +297,16 @@ public class AñadirPErsona extends JFrame {
 				String nombreClub = rs.getString("nombre");
 				tClub.addItem(nombreClub);
 			}
-
 			rs.close();
 			stmt.close();
-			con.close();
 		} catch (SQLException e) {
 			System.out.println("Error al conectar a la base de datos: " + e.getMessage());
 		}
 	}
+
 	private void desplegablePuesto() {
 		try {
 
-			Connection con = DriverManager.getConnection(url, userName, password);
 			String query = "SELECT nombre FROM PUESTO";
 			PreparedStatement stmt = con.prepareStatement(query);
 			ResultSet rs = stmt.executeQuery();
@@ -323,7 +318,7 @@ public class AñadirPErsona extends JFrame {
 
 			rs.close();
 			stmt.close();
-			con.close();
+
 		} catch (SQLException e) {
 			System.out.println("Error al conectar a la base de datos: " + e.getMessage());
 		}
@@ -349,12 +344,13 @@ public class AñadirPErsona extends JFrame {
 	public int calcularCarrera() {
 		try {
 
-			Connection con = DriverManager.getConnection(url, userName, password);
 			String query = "SELECT nombre FROM CLUB";
 			PreparedStatement stmt = con.prepareStatement(query);
 			ResultSet rs = stmt.executeQuery();
 
 			int codigoChup = 0;
+			System.out.println(calcularEdad(tFechaNacimiento.getText()));
+
 			if ((calcularEdad(tFechaNacimiento.getText())) < 5) {
 				String Chupetines = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=1";
 				rs = ((java.sql.Statement) stmt).executeQuery(Chupetines);
@@ -477,12 +473,11 @@ public class AñadirPErsona extends JFrame {
 		int resto = a % 23;
 		char letraCalculada = letras.charAt(resto);
 		if (letra1 == letraCalculada) {
-			Connection con;desplegablePuesto();
+			desplegablePuesto();
 			Statement st;
 
 			try {
 
-				con = DriverManager.getConnection(url, userName, password);
 				System.out.println("Has realizado la inscripción correctamente");
 
 				java.sql.Statement stmt = con.createStatement();
@@ -520,44 +515,42 @@ public class AñadirPErsona extends JFrame {
 				stm.setString(9, tLocalidad.getText());
 				stm.setString(10, tProvincia.getText());
 				stm.setString(11, tTelefono.getText());
-				int retorno = stm.executeUpdate();
+				stm.executeUpdate();
 
-				
-				
-				if(rdbtnCorredor.isSelected()) {
-				calcularCarrera();
-				String insert2 = "INSERT INTO CORREDOR (club, dorsal, tiempo, codigo_carrera,codigo_persona) VALUES (?,?,?,?,?)";
-				stmi = con.prepareStatement(insert2);
-				stmi.setInt(1, codigoClub);
-				stmi.setInt(2, idClienteUltimo + 1);
-				stmi.setString(3, null);
-				stmi.setInt(4, calcularCarrera());
-				stmi.setInt(5, idClienteUltimo + 1);
-				int retorno2 = stmi.executeUpdate();
+				if (rdbtnCorredor.isSelected()) {
+					calcularCarrera();
+					String insert2 = "INSERT INTO CORREDOR (club, dorsal, tiempo, codigo_carrera,codigo_persona,valido) VALUES (?,?,?,?,?,?)";
+					stmi = con.prepareStatement(insert2);
+					stmi.setInt(1, codigoClub);
+					stmi.setInt(2, idClienteUltimo + 1);
+					stmi.setString(3, null);
+					stmi.setInt(4, calcularCarrera());
+					stmi.setInt(5, idClienteUltimo + 1);
+					stmi.setString(6, "t");
+					stmi.executeUpdate();
 				}
-				
-				if(rdbtnTrabajador.isSelected()) {								
+
+				if (rdbtnTrabajador.isSelected()) {
 					String insert3 = "INSERT INTO TRABAJADOR (codigo_persona, fecha_contrato_inicio, fecha_contrato_final) VALUES (?,?,?)";
 					stmie = con.prepareStatement(insert3);
 					stmie.setInt(1, idClienteUltimo + 1);
 					stmie.setString(2, tFInicio.getText());
 					stmie.setString(3, tFFinal.getText());
-					int retorno3 = stmie.executeUpdate();
-					}
-				if(rdbtnVoluntario.isSelected()) {
-					
-								
+					stmie.executeUpdate();
+				}
+				if (rdbtnVoluntario.isSelected()) {
+
 					String insert4 = "INSERT INTO VOLUNTARIO (codigo_persona) VALUES (?)";
 					stmiep = con.prepareStatement(insert4);
 					stmiep.setInt(1, idClienteUltimo + 1);
-					int retorno4 = stmiep.executeUpdate();
-					
+					stmiep.executeUpdate();
+
 					String insert5 = "INSERT INTO DESEMPENA (codigo_persona, nombre_puesto) VALUES (?,?)";
 					String Puesto = String.valueOf(tPuesto.getSelectedItem());
 					p = con.prepareStatement(insert5);
 					p.setInt(1, idClienteUltimo + 1);
 					p.setString(2, Puesto);
-					int retorno5 = p.executeUpdate();
+					p.executeUpdate();
 				}
 			}
 
@@ -570,5 +563,4 @@ public class AñadirPErsona extends JFrame {
 
 	}
 
-	
 }

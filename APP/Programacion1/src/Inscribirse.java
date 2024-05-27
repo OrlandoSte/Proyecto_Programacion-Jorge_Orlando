@@ -41,6 +41,8 @@ public class Inscribirse extends JFrame {
 	private JTextField tProvincia;
 	private JTextField tTelefono;
 	private JComboBox<String> tClub;
+	private Conexion conA = new Conexion();
+	private Connection con = conA.abrirConexion();
 
 	/**
 	 * Launch the application.
@@ -70,7 +72,7 @@ public class Inscribirse extends JFrame {
 	 */
 	public Inscribirse() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 527, 415);
+		setBounds(100, 100, 568, 383);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -78,69 +80,69 @@ public class Inscribirse extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel DNI = new JLabel("DNI:");
-		DNI.setBounds(71, 26, 70, 15);
+		DNI.setBounds(193, 26, 29, 15);
 		contentPane.add(DNI);
 
 		JLabel Nombre = new JLabel("Nombre:");
-		Nombre.setBounds(71, 53, 70, 15);
+		Nombre.setBounds(162, 53, 60, 15);
 		contentPane.add(Nombre);
 
 		JLabel Apellidos = new JLabel("Apellidos:");
-		Apellidos.setBounds(71, 80, 70, 15);
+		Apellidos.setBounds(152, 80, 70, 15);
 		contentPane.add(Apellidos);
 
 		JLabel Sexo = new JLabel("Sexo(H/M):");
-		Sexo.setBounds(71, 107, 88, 15);
+		Sexo.setBounds(144, 109, 78, 15);
 		contentPane.add(Sexo);
 
 		JLabel FechaNacimiento = new JLabel("Fecha de nacimiento:");
-		FechaNacimiento.setBounds(71, 134, 157, 15);
+		FechaNacimiento.setBounds(71, 136, 151, 15);
 		contentPane.add(FechaNacimiento);
 
 		JLabel Direccion = new JLabel("Direccion:");
-		Direccion.setBounds(71, 161, 70, 15);
+		Direccion.setBounds(152, 163, 70, 15);
 		contentPane.add(Direccion);
 
 		JLabel CodigoPostal = new JLabel("Codigo postal:");
-		CodigoPostal.setBounds(71, 188, 128, 15);
+		CodigoPostal.setBounds(119, 190, 103, 15);
 		contentPane.add(CodigoPostal);
 
 		JLabel Localidad = new JLabel("Localidad:");
-		Localidad.setBounds(71, 215, 78, 15);
+		Localidad.setBounds(144, 217, 78, 15);
 		contentPane.add(Localidad);
 
 		JLabel Provincia = new JLabel("Provincia:");
-		Provincia.setBounds(71, 242, 70, 15);
+		Provincia.setBounds(152, 242, 70, 15);
 		contentPane.add(Provincia);
 
 		JLabel Telefono = new JLabel("Número de teléfono:");
-		Telefono.setBounds(71, 269, 157, 15);
+		Telefono.setBounds(76, 269, 146, 15);
 		contentPane.add(Telefono);
 
 		JLabel Club = new JLabel("Club(opcional):");
-		Club.setBounds(71, 296, 111, 15);
+		Club.setBounds(116, 296, 106, 15);
 		contentPane.add(Club);
 
 		MaskFormatter formatter = null;
 		try {
 			formatter = new MaskFormatter("########-U");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 
 		tDNI = new JFormattedTextField(formatter);
-		tDNI.setBounds(114, 24, 114, 19);
+		tDNI.setBounds(230, 24, 114, 19);
 		contentPane.add(tDNI);
 		tDNI.setColumns(10);
 
 		tNombre = new JTextField();
-		tNombre.setBounds(141, 51, 114, 19);
+		tNombre.setBounds(230, 51, 114, 19);
 		contentPane.add(tNombre);
 		tNombre.setColumns(10);
 
 		tApellidos = new JTextField();
-		tApellidos.setBounds(151, 78, 114, 19);
+		tApellidos.setBounds(230, 78, 114, 19);
 		contentPane.add(tApellidos);
 		tApellidos.setColumns(10);
 
@@ -148,12 +150,11 @@ public class Inscribirse extends JFrame {
 		try {
 			formatter2 = new MaskFormatter("U");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		tSexo = new JFormattedTextField(formatter2);
-		tSexo.setBounds(161, 105, 114, 19);
+		tSexo.setBounds(230, 105, 114, 19);
 		contentPane.add(tSexo);
 		tSexo.setColumns(10);
 
@@ -161,7 +162,7 @@ public class Inscribirse extends JFrame {
 		try {
 			formatter3 = new MaskFormatter("####-##-##");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 
@@ -171,22 +172,22 @@ public class Inscribirse extends JFrame {
 		tFechaNacimiento.setColumns(10);
 
 		tDireccion = new JTextField();
-		tDireccion.setBounds(159, 159, 114, 19);
+		tDireccion.setBounds(230, 159, 114, 19);
 		contentPane.add(tDireccion);
 		tDireccion.setColumns(10);
 
 		tCodigoPostal = new JTextField();
-		tCodigoPostal.setBounds(185, 186, 114, 19);
+		tCodigoPostal.setBounds(230, 186, 114, 19);
 		contentPane.add(tCodigoPostal);
 		tCodigoPostal.setColumns(10);
 
 		tLocalidad = new JTextField();
-		tLocalidad.setBounds(159, 215, 114, 19);
+		tLocalidad.setBounds(230, 213, 114, 19);
 		contentPane.add(tLocalidad);
 		tLocalidad.setColumns(10);
 
 		tProvincia = new JTextField();
-		tProvincia.setBounds(159, 240, 114, 19);
+		tProvincia.setBounds(230, 240, 114, 19);
 		contentPane.add(tProvincia);
 		tProvincia.setColumns(10);
 
@@ -196,7 +197,7 @@ public class Inscribirse extends JFrame {
 		tTelefono.setColumns(10);
 
 		tClub = new JComboBox<>();
-		tClub.setBounds(185, 294, 114, 19);
+		tClub.setBounds(230, 294, 114, 19);
 		contentPane.add(tClub);
 
 		desplegableClub();
@@ -214,20 +215,16 @@ public class Inscribirse extends JFrame {
 		btnInscribirse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				añadirPersona();
+				volver();
 			}
 		});
 		btnInscribirse.setBounds(386, 291, 117, 25);
 		contentPane.add(btnInscribirse);
 	}
 
-	String userName = "bd";
-	String password = "proyecto";
-	String url = "jdbc:mysql://192.168.11.155:3306/ProyectoProgramación";
-
 	private void desplegableClub() {
 		try {
 
-			Connection con = DriverManager.getConnection(url, userName, password);
 			String query = "SELECT nombre FROM CLUB";
 			PreparedStatement stmt = con.prepareStatement(query);
 			ResultSet rs = stmt.executeQuery();
@@ -239,7 +236,6 @@ public class Inscribirse extends JFrame {
 
 			rs.close();
 			stmt.close();
-			con.close();
 		} catch (SQLException e) {
 			System.out.println("Error al conectar a la base de datos: " + e.getMessage());
 		}
@@ -265,53 +261,52 @@ public class Inscribirse extends JFrame {
 	public int calcularCarrera() {
 		try {
 
-			Connection con = DriverManager.getConnection(url, userName, password);
 			String query = "SELECT nombre FROM CLUB";
 			PreparedStatement stmt = con.prepareStatement(query);
 			ResultSet rs = stmt.executeQuery();
 
-			int codigoChup = 0;
+			int codigo = 0;
 			if ((calcularEdad(tFechaNacimiento.getText())) < 5) {
 				String Chupetines = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=1";
 				rs = ((java.sql.Statement) stmt).executeQuery(Chupetines);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 9) {
 				String Minibenjamines = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=2";
 				rs = ((java.sql.Statement) stmt).executeQuery(Minibenjamines);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 11) {
 				String Benjamines = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=3";
 				rs = ((java.sql.Statement) stmt).executeQuery(Benjamines);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 13) {
 				String Alevin = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=4";
 				rs = ((java.sql.Statement) stmt).executeQuery(Alevin);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 15) {
 				String Infantil = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=5";
 				rs = ((java.sql.Statement) stmt).executeQuery(Infantil);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 17 && tSexo.getText().equals("H")) {
 				String Cadete = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=6";
 				rs = ((java.sql.Statement) stmt).executeQuery(Cadete);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -320,7 +315,7 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(Cadete);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -329,7 +324,7 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(Juvenil);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -338,7 +333,7 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(Juvenil);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -347,7 +342,7 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(Senior);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -356,7 +351,7 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(Senior);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -365,19 +360,18 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(VeteranosH);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 99 && tSexo.getText().equals("M")) {
 				String VeteranosM = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=13";
 				rs = ((java.sql.Statement) stmt).executeQuery(VeteranosM);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
-			return codigoChup;
+			return codigo;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return 0;
@@ -393,12 +387,9 @@ public class Inscribirse extends JFrame {
 		int resto = a % 23;
 		char letraCalculada = letras.charAt(resto);
 		if (letra1 == letraCalculada) {
-			Connection con;
-			Statement st;
 
 			try {
 
-				con = DriverManager.getConnection(url, userName, password);
 				System.out.println("Has realizado la inscripción correctamente");
 
 				java.sql.Statement stmt = con.createStatement();
@@ -433,7 +424,7 @@ public class Inscribirse extends JFrame {
 				stm.setString(9, tLocalidad.getText());
 				stm.setString(10, tProvincia.getText());
 				stm.setString(11, tTelefono.getText());
-				int retorno = stm.executeUpdate();
+				stm.executeUpdate();
 
 				calcularCarrera();
 
@@ -445,7 +436,8 @@ public class Inscribirse extends JFrame {
 				stmi.setInt(4, calcularCarrera());
 				stmi.setInt(5, idClienteUltimo + 1);
 				stmi.setString(6, "f");
-				int retorno2 = stmi.executeUpdate();
+				stmi.executeUpdate();
+				con.close();
 			}
 
 			catch (SQLException e) {

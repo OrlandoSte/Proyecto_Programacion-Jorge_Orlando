@@ -53,7 +53,7 @@ public class Admin extends JFrame {
 		this.dispose();
 	}
 	public void abrirPersona() {
-		AñadirPErsona form=new AñadirPErsona();
+		AñadirPersona form=new AñadirPersona();
 		form.setVisible(true);
 		this.dispose();
 	}
@@ -72,12 +72,17 @@ public class Admin extends JFrame {
 		form.setVisible(true);
 		this.dispose();
 	}
+	public void abrirValidacion() {
+		ValidarInscripcion form=new ValidarInscripcion();
+		form.setVisible(true);
+		this.dispose();
+	}
 	/**
 	 * Create the frame.
 	 */
 	public Admin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 513, 361);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -90,7 +95,7 @@ public class Admin extends JFrame {
 				abrirAportacion();
 			}
 		});
-		btnAadirAportacion.setBounds(106, 22, 200, 25);
+		btnAadirAportacion.setBounds(106, 20, 200, 25);
 		contentPane.add(btnAadirAportacion);
 		
 		JButton btnAadirAportacion_1 = new JButton("Añadir Patrocinador");
@@ -99,7 +104,7 @@ public class Admin extends JFrame {
 				abrirPatrocinador();
 			}
 		});
-		btnAadirAportacion_1.setBounds(106, 49, 200, 25);
+		btnAadirAportacion_1.setBounds(106, 50, 200, 25);
 		contentPane.add(btnAadirAportacion_1);
 		
 		JButton btnAadirAportacion_2 = new JButton("Añadir Carrera");
@@ -117,7 +122,7 @@ public class Admin extends JFrame {
 				abrirCategoria();
 			}
 		});
-		btnAadirAportacion_3.setBounds(106, 107, 200, 25);
+		btnAadirAportacion_3.setBounds(106, 110, 200, 25);
 		contentPane.add(btnAadirAportacion_3);
 		
 		JButton btnAadirAportacion_4 = new JButton("Añadir Club");
@@ -126,7 +131,7 @@ public class Admin extends JFrame {
 				abrirClub();
 			}
 		});
-		btnAadirAportacion_4.setBounds(106, 137, 200, 25);
+		btnAadirAportacion_4.setBounds(106, 140, 200, 25);
 		contentPane.add(btnAadirAportacion_4);
 		
 		JButton btnAadirAportacion_5 = new JButton("Añadir Recorrido");
@@ -135,7 +140,7 @@ public class Admin extends JFrame {
 				abrirRecorrido();
 			}
 		});
-		btnAadirAportacion_5.setBounds(106, 166, 200, 25);
+		btnAadirAportacion_5.setBounds(106, 170, 200, 25);
 		contentPane.add(btnAadirAportacion_5);
 		
 		JButton btnAadirAportacion_6 = new JButton("Añadir Persona");
@@ -144,7 +149,7 @@ public class Admin extends JFrame {
 				abrirPersona();
 			}
 		});
-		btnAadirAportacion_6.setBounds(106, 194, 200, 25);
+		btnAadirAportacion_6.setBounds(106, 200, 200, 25);
 		contentPane.add(btnAadirAportacion_6);
 		
 		JButton btnAadirAportacion_7 = new JButton("Añadir Puesto");
@@ -153,7 +158,7 @@ public class Admin extends JFrame {
 				abrirPuesto();
 			}
 		});
-		btnAadirAportacion_7.setBounds(106, 222, 200, 25);
+		btnAadirAportacion_7.setBounds(106, 230, 200, 25);
 		contentPane.add(btnAadirAportacion_7);
 		
 		JButton btnVolver = new JButton("Volver");
@@ -164,6 +169,14 @@ public class Admin extends JFrame {
 		});
 		btnVolver.setBounds(341, 22, 87, 25);
 		contentPane.add(btnVolver);
+		
+		JButton btnAadirAportacion_8 = new JButton("Validar Inscripcion");
+		btnAadirAportacion_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				abrirValidacion();
+			}
+		});
+		btnAadirAportacion_8.setBounds(106, 260, 200, 25);
+		contentPane.add(btnAadirAportacion_8);
 	}
-
 }

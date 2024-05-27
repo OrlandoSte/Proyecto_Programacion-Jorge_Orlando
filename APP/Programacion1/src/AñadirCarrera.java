@@ -28,6 +28,8 @@ public class AñadirCarrera extends JFrame {
     private JTextField tRegla;
     private JComboBox<String> tCodCategoria;
     private JComboBox<Integer> tCodRecorrido;
+    private Conexion conA = new Conexion();
+    private Connection con = conA.abrirConexion();
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -50,7 +52,7 @@ public class AñadirCarrera extends JFrame {
 
     public AñadirCarrera() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 527, 415);
+        setBounds(100, 100, 526, 284);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -58,23 +60,23 @@ public class AñadirCarrera extends JFrame {
         contentPane.setLayout(null);
 
         JLabel Sexo = new JLabel("Sexo(H/M):");
-        Sexo.setBounds(71, 26, 82, 15);
+        Sexo.setBounds(133, 26, 75, 15);
         contentPane.add(Sexo);
 
         JLabel HoraComienzo = new JLabel("Hora de comienzo:");
-        HoraComienzo.setBounds(71, 53, 137, 15);
+        HoraComienzo.setBounds(76, 53, 132, 15);
         contentPane.add(HoraComienzo);
 
         JLabel Regla = new JLabel("Reglas de la carrera:");
-        Regla.setBounds(71, 80, 157, 15);
+        Regla.setBounds(60, 80, 148, 15);
         contentPane.add(Regla);
 
         JLabel CodCategoria = new JLabel("Código de la categoría:");
-        CodCategoria.setBounds(71, 107, 184, 15);
+        CodCategoria.setBounds(43, 107, 165, 15);
         contentPane.add(CodCategoria);
 
         JLabel CodRecorrido = new JLabel("Código del recorrido:");
-        CodRecorrido.setBounds(71, 134, 157, 15);
+        CodRecorrido.setBounds(54, 134, 154, 15);
         contentPane.add(CodRecorrido);
 
         MaskFormatter formatter = null;
@@ -85,7 +87,7 @@ public class AñadirCarrera extends JFrame {
         }
 
         tSexo = new JFormattedTextField(formatter);
-        tSexo.setBounds(158, 24, 114, 19);
+        tSexo.setBounds(215, 24, 114, 19);
         contentPane.add(tSexo);
         tSexo.setColumns(10);
 
@@ -102,29 +104,29 @@ public class AñadirCarrera extends JFrame {
         tHoraComienzo.setColumns(10);
 
         tRegla = new JTextField();
-        tRegla.setBounds(242, 78, 114, 19);
+        tRegla.setBounds(215, 78, 114, 19);
         contentPane.add(tRegla);
         tRegla.setColumns(10);
 
         tCodCategoria = new JComboBox<>();
-        tCodCategoria.setBounds(255, 105, 114, 19);
+        tCodCategoria.setBounds(215, 105, 114, 19);
         contentPane.add(tCodCategoria);
 
         tCodRecorrido = new JComboBox<>();
-        tCodRecorrido.setBounds(228, 134, 114, 19);
+        tCodRecorrido.setBounds(215, 132, 114, 19);
         contentPane.add(tCodRecorrido);
 
         // Poblar el JComboBox con los códigos de la categoría
         desplegableCategoria();
         desplegableRecorrido();
 
-        JButton btnAñadirCarrera = new JButton("Añadir Club");
+        JButton btnAñadirCarrera = new JButton("Añadir");
         btnAñadirCarrera.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 añadirCarrera();
             }
         });
-        btnAñadirCarrera.setBounds(378, 291, 117, 25);
+        btnAñadirCarrera.setBounds(378, 178, 117, 25);
         contentPane.add(btnAñadirCarrera);
 
         JButton btnVolver = new JButton("Volver");
@@ -137,13 +139,9 @@ public class AñadirCarrera extends JFrame {
         contentPane.add(btnVolver);
     }
 
-    String userName = "bd";
-    String password = "proyecto";
-    String url = "jdbc:mysql://192.168.11.155:3306/ProyectoProgramación";
-    
     private void desplegableCategoria() {
         try {
-            Connection con = DriverManager.getConnection(url, userName, password);
+
             String query = "SELECT nombre FROM CATEGORIA";
             PreparedStatement stmt = con.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
@@ -155,7 +153,6 @@ public class AñadirCarrera extends JFrame {
 
             rs.close();
             stmt.close();
-            con.close();
         } catch (SQLException e) {
             System.out.println("Error al conectar a la base de datos: " + e.getMessage());
         }
@@ -164,7 +161,6 @@ public class AñadirCarrera extends JFrame {
     private void desplegableRecorrido() {
         try {
             
-            Connection con = DriverManager.getConnection(url, userName, password);
             String query = "SELECT codigo_recorrido FROM RECORRIDO";
             PreparedStatement stmt = con.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
@@ -176,7 +172,7 @@ public class AñadirCarrera extends JFrame {
 
             rs.close();
             stmt.close();
-            con.close();
+            
         } catch (SQLException e) {
             System.out.println("Error al conectar a la base de datos: " + e.getMessage());
         }
@@ -185,8 +181,6 @@ public class AñadirCarrera extends JFrame {
     private void añadirCarrera() {
         try {
 
-
-            Connection con = DriverManager.getConnection(url, userName, password);
             System.out.println("Has introducido el club correctamente");
 
             java.sql.Statement stmt = con.createStatement();
@@ -223,7 +217,7 @@ public class AñadirCarrera extends JFrame {
             rs.close();
             stmt.close();
             stm.close();
-            con.close();
+
         } catch (SQLException e) {
             System.out.println("Error al conectar a la base de datos: " + e.getMessage());
         }
