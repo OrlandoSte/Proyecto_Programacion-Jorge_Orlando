@@ -215,6 +215,7 @@ public class Inscribirse extends JFrame {
 		btnInscribirse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				añadirPersona();
+				volver();
 			}
 		});
 		btnInscribirse.setBounds(386, 291, 117, 25);
@@ -264,48 +265,48 @@ public class Inscribirse extends JFrame {
 			PreparedStatement stmt = con.prepareStatement(query);
 			ResultSet rs = stmt.executeQuery();
 
-			int codigoChup = 0;
+			int codigo = 0;
 			if ((calcularEdad(tFechaNacimiento.getText())) < 5) {
 				String Chupetines = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=1";
 				rs = ((java.sql.Statement) stmt).executeQuery(Chupetines);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 9) {
 				String Minibenjamines = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=2";
 				rs = ((java.sql.Statement) stmt).executeQuery(Minibenjamines);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 11) {
 				String Benjamines = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=3";
 				rs = ((java.sql.Statement) stmt).executeQuery(Benjamines);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 13) {
 				String Alevin = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=4";
 				rs = ((java.sql.Statement) stmt).executeQuery(Alevin);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 15) {
 				String Infantil = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=5";
 				rs = ((java.sql.Statement) stmt).executeQuery(Infantil);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 17 && tSexo.getText().equals("H")) {
 				String Cadete = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=6";
 				rs = ((java.sql.Statement) stmt).executeQuery(Cadete);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -314,7 +315,7 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(Cadete);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -323,7 +324,7 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(Juvenil);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -332,7 +333,7 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(Juvenil);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -341,7 +342,7 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(Senior);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -350,7 +351,7 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(Senior);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
 
@@ -359,17 +360,17 @@ public class Inscribirse extends JFrame {
 				rs = ((java.sql.Statement) stmt).executeQuery(VeteranosH);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			} else if ((calcularEdad(tFechaNacimiento.getText())) < 99 && tSexo.getText().equals("M")) {
 				String VeteranosM = "SELECT codigo_carrera FROM CARRERA WHERE cod_categoria=13";
 				rs = ((java.sql.Statement) stmt).executeQuery(VeteranosM);
 
 				if (rs.next()) {
-					codigoChup = rs.getInt("codigo_carrera");
+					codigo = rs.getInt("codigo_carrera");
 				}
 			}
-			return codigoChup;
+			return codigo;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

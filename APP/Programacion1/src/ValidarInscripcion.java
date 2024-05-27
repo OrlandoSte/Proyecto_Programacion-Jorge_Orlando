@@ -44,6 +44,11 @@ public class ValidarInscripcion extends JFrame {
 			}
 		});
 	}
+	public void abrirValidacion() {
+		ValidarInscripcion form=new ValidarInscripcion();
+		form.setVisible(true);
+		this.dispose();
+	}
 
 	public void abrirAdmin() {
 		Admin form = new Admin();
@@ -67,7 +72,7 @@ public class ValidarInscripcion extends JFrame {
 		scrollPane.setBounds(12, 0, 855, 418);
 		contentPane.add(scrollPane);
 
-		tableModel = new DefaultTableModel(new Object[] { "Persona", "Detalles Persona", "Detalles Corredor" }, 0);
+		tableModel = new DefaultTableModel(new Object[] { "Código", "Detalles Persona", "Detalles Corredor" }, 0);
 		table = new JTable(tableModel);
 		scrollPane.setViewportView(table);
 
@@ -92,6 +97,8 @@ public class ValidarInscripcion extends JFrame {
 					pstmt = con.prepareStatement(update);
 					pstmt.executeUpdate();
 
+					dispose();
+					abrirValidacion();
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -129,6 +136,8 @@ public class ValidarInscripcion extends JFrame {
 					pstmt.executeUpdate();
 					
 					System.out.println(b);
+					dispose();
+					abrirValidacion();
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -165,7 +174,7 @@ public class ValidarInscripcion extends JFrame {
 
 			tableModel.setRowCount(0); // Clear existing data
 
-			while (rs.next() && rt.next()) {
+			while (rt.next() && rs.next()) {
 				int var1 = rs.getInt(1);
 				String var2 = rs.getString(2);
 				String var3 = rs.getString(3);
@@ -178,7 +187,7 @@ public class ValidarInscripcion extends JFrame {
 				String var10 = rs.getString(10);
 				String var11 = rs.getString(11);
 
-				String personaDetails = var1 + "  " + var2 + "  " + var3 + "  " + var4 + "  " + var5 + "  " + var6
+				String personaDetails = var2 + "  " + var3 + "  " + var4 + "  " + var5 + "  " + var6
 						+ "  " + var7 + "  " + var8 + "  " + var9 + "  " + var10 + "  " + var11;
 
 				int var111 = rt.getInt(1);
@@ -191,7 +200,7 @@ public class ValidarInscripcion extends JFrame {
 				String corredorDetails = var111 + " " + var112 + " " + var113 + " " + var114 + " " + var115 + " "
 						+ var116;
 
-				tableModel.addRow(new Object[] { "Persona " + var1, personaDetails, corredorDetails });
+				tableModel.addRow(new Object[] {var1, personaDetails, corredorDetails });
 			}
 
 		} catch (SQLException e) {
