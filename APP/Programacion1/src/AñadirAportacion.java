@@ -77,8 +77,8 @@ public class AñadirAportacion extends JFrame {
 		aportación.setBounds(12, 80, 138, 15);
 		contentPane.add(aportación);
 
-		JLabel patrocinador = new JLabel("Código del patrocinador:");
-		patrocinador.setBounds(52, 109, 184, 15);
+		JLabel patrocinador = new JLabel("Patrocinador:");
+		patrocinador.setBounds(52, 107, 184, 15);
 		contentPane.add(patrocinador);
 
 		tConcepto = new JTextField();
@@ -97,7 +97,7 @@ public class AñadirAportacion extends JFrame {
 		tTipo_aportacion.setColumns(10);
 
 		tPatrocinador = new JComboBox<>();
-		tPatrocinador.setBounds(236, 107, 114, 19);
+		tPatrocinador.setBounds(161, 105, 114, 19);
 		contentPane.add(tPatrocinador);
 
 		desplegablePatrocinador();
