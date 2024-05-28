@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -389,7 +390,6 @@ public class Inscribirse extends JFrame {
 		if (letra1 == letraCalculada) {
 
 			try {
-
 				System.out.println("Has realizado la inscripción correctamente");
 
 				java.sql.Statement stmt = con.createStatement();
@@ -438,6 +438,7 @@ public class Inscribirse extends JFrame {
 				stmi.setString(6, "f");
 				stmi.executeUpdate();
 				con.close();
+				JOptionPane.showMessageDialog(null, "Has sido añadido correctamente!");	
 			}
 
 			catch (SQLException e) {

@@ -14,6 +14,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -136,6 +137,7 @@ public class AñadirAportacion extends JFrame {
 					stm.setString(4, tTipo_aportacion.getText());
 					stm.setInt(5, codigoPatrocinador);
 					stm.executeUpdate();
+					JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
 				}
 
 				catch (SQLException e) {

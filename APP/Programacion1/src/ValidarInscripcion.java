@@ -3,12 +3,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.SQLSyntaxErrorException;
 import java.sql.ResultSet;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -90,8 +92,11 @@ public class ValidarInscripcion extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				PreparedStatement pstmt = null;
+				if(textField.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "Escribe un codigo existente para validarlo");
+				}
+				else {
 				try {
-
 					String b = textField.getText();
 					String update = "UPDATE CORREDOR SET valido='t' where codigo_persona=" + b;
 					pstmt = con.prepareStatement(update);
@@ -102,7 +107,7 @@ public class ValidarInscripcion extends JFrame {
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-			}
+			}}
 		});
 
 		btnValidar.setBounds(439, 430, 117, 25);
@@ -123,6 +128,10 @@ public class ValidarInscripcion extends JFrame {
 
 				PreparedStatement pstmt = null;
 
+				if(textField_1.getText().equals("")) {
+					JOptionPane.showMessageDialog(null, "Escribe un código valido para eliminarlo");
+				}
+				else {
 				try {
 
 					String b = textField_1.getText();
@@ -135,14 +144,13 @@ public class ValidarInscripcion extends JFrame {
 					pstmt = con.prepareStatement(update1);
 					pstmt.executeUpdate();
 					
-					System.out.println(b);
 					dispose();
 					abrirValidacion();
-				} catch (SQLException e) {
+				} 
+				catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
-
+				}}
 			}
 		});
 		btnActualizar.setBounds(128, 430, 134, 25);

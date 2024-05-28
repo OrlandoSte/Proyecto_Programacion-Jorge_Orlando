@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -108,7 +109,7 @@ public class AñadirCategoria extends JFrame {
 					stm.setString(2, tNombre.getText());
 					stm.setString(3, tEdad.getText());
 					stm.executeUpdate();
-					System.out.println("Has introducido el recorrido correctamente");
+					JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
 				}
 
 				catch (SQLException e) {
