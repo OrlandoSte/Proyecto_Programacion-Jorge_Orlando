@@ -12,6 +12,7 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -217,7 +218,7 @@ public class AñadirCarrera extends JFrame {
             rs.close();
             stmt.close();
             stm.close();
-
+            JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
         } catch (SQLException e) {
             System.out.println("Error al conectar a la base de datos: " + e.getMessage());
         }

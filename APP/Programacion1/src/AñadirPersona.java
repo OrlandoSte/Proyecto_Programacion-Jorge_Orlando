@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -516,7 +517,7 @@ public class AñadirPersona extends JFrame {
 				stm.setString(10, tProvincia.getText());
 				stm.setString(11, tTelefono.getText());
 				stm.executeUpdate();
-
+				JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
 				if (rdbtnCorredor.isSelected()) {
 					calcularCarrera();
 					String insert2 = "INSERT INTO CORREDOR (club, dorsal, tiempo, codigo_carrera,codigo_persona,valido) VALUES (?,?,?,?,?,?)";

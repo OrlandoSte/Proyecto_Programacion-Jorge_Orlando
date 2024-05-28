@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -124,6 +125,7 @@ public class AñadirClub extends JFrame {
 					stm.setString(4, tTelefono.getText());
 					stm.setString(5, tResponsable.getText());
 					stm.executeUpdate();
+					JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
 				}
 
 				catch (SQLException e) {
