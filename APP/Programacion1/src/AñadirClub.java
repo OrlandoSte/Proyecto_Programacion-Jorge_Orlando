@@ -130,9 +130,9 @@ public class AñadirClub extends JFrame {
 
 				catch (SQLException e) {
 					System.out.println("Error al conectar a la base de datos: " + e.getMessage());
-				}
+				}}
 
-			}
+			
 		});
 		btnAñadirClub.setBounds(378, 102, 117, 25);
 		contentPane.add(btnAñadirClub);
