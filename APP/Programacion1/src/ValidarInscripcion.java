@@ -90,7 +90,8 @@ public class ValidarInscripcion extends JFrame {
 					String update = "UPDATE CORREDOR SET valido='t' where codigo_persona=" + b;
 					pstmt = con.prepareStatement(update);
 					pstmt.executeUpdate();
-
+					JsonDatos json = new JsonDatos(conA);
+					json.exportarEventoAJson();
 					dispose();
 					abrirValidacion();
 				} catch (SQLException e) {
@@ -132,7 +133,8 @@ public class ValidarInscripcion extends JFrame {
 					String update1 = "DELETE FROM PERSONA where codigo_persona=" + b1;
 					pstmt = con.prepareStatement(update1);
 					pstmt.executeUpdate();
-					
+					JsonDatos json = new JsonDatos(conA);
+					json.exportarEventoAJson();
 					dispose();
 					abrirValidacion();
 				} 

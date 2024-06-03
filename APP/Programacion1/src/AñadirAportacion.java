@@ -126,6 +126,8 @@ public class AñadirAportacion extends JFrame {
 					stm.setString(4, tTipo_aportacion.getText());
 					stm.setInt(5, codigoPatrocinador);
 					stm.executeUpdate();
+					JsonDatos json = new JsonDatos(conA);
+					json.exportarEventoAJson();
 					JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
 				}
 

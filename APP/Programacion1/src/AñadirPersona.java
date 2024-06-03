@@ -223,6 +223,8 @@ public class AñadirPersona extends JFrame {
 		JButton btnInscribirse = new JButton("Inscribirse");
 		btnInscribirse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				JsonDatos json = new JsonDatos(conA);
+				json.exportarEventoAJson();
 				añadirPersona();
 			}
 		});

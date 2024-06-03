@@ -98,6 +98,8 @@ public class AñadirCategoria extends JFrame {
 					stm.setString(2, tNombre.getText());
 					stm.setString(3, tEdad.getText());
 					stm.executeUpdate();
+					JsonDatos json = new JsonDatos(conA);
+					json.exportarEventoAJson();
 					JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
 				}
 

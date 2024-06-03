@@ -1,6 +1,5 @@
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
@@ -13,12 +12,12 @@ import java.util.List;
 import java.util.Map;
 
 public class JsonDatos {
-    private Conexion conA = new Conexion();
-    private Connection conexion = conA.abrirConexion();
 
-    public static void main(String[] args) {
-    	JsonDatos json = new JsonDatos();
-        json.exportarEventoAJson();
+	private static Conexion conA = new Conexion();
+    private Connection con = conA.abrirConexion();
+	
+    public JsonDatos(Conexion con) {
+        this.conA = con;
     }
 
     public void exportarEventoAJson() {
@@ -41,42 +40,26 @@ public class JsonDatos {
             writer.write(json);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        } 
     }
 
     private List<Map<String, Object>> datosTabla(String nombreTabla) {
         List<Map<String, Object>> tablaData = new ArrayList<>();
-        Connection connection = null;
 
-        try {
-            connection = conA.abrirConexion();
-            String query = "SELECT * FROM " + nombreTabla;
-
-            try (Statement statement = connection.createStatement();
-                 ResultSet resultSet = statement.executeQuery(query)) {
-
-                int columnCount = resultSet.getMetaData().getColumnCount();
-                while (resultSet.next()) {
-                    Map<String, Object> row = new HashMap<>();
-                    for (int i = 1; i <= columnCount; i++) {
-                        String columnName = resultSet.getMetaData().getColumnName(i);
-                        Object columnValue = resultSet.getObject(i);
-                        row.put(columnName, columnValue);
-                    }
-                    tablaData.add(row);
+        String query = "SELECT * FROM " + nombreTabla;
+        try (Statement statement = con.createStatement(); ResultSet resultSet = statement.executeQuery(query)) {
+            int columnCount = resultSet.getMetaData().getColumnCount();
+            while (resultSet.next()) {
+                Map<String, Object> row = new HashMap<>();
+                for (int i = 1; i <= columnCount; i++) {
+                    String columnName = resultSet.getMetaData().getColumnName(i);
+                    Object columnValue = resultSet.getObject(i);
+                    row.put(columnName, columnValue);
                 }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
+                tablaData.add(row);
             }
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
         return tablaData;
@@ -84,37 +67,21 @@ public class JsonDatos {
 
     private List<Map<String, Object>> obtenerDatosDeCorredores() {
         List<Map<String, Object>> corredoresData = new ArrayList<>();
-        Connection connection = null;
 
-        try {
-            connection = conA.abrirConexion();
-            String query = "SELECT c.*, p.nombre, p.apellidos FROM corredor c JOIN persona p ON c.codigo_persona = p.codigo_persona";
-
-            try (Statement statement = connection.createStatement();
-                 ResultSet resultSet = statement.executeQuery(query)) {
-
-                int columnCount = resultSet.getMetaData().getColumnCount();
-                while (resultSet.next()) {
-                    Map<String, Object> row = new HashMap<>();
-                    for (int i = 1; i <= columnCount; i++) {
-                        String columnName = resultSet.getMetaData().getColumnName(i);
-                        Object columnValue = resultSet.getObject(i);
-                        row.put(columnName, columnValue);
-                    }
-                    corredoresData.add(row);
+        String query = "SELECT c.*, p.nombre, p.apellidos FROM corredor c JOIN persona p ON c.codigo_persona = p.codigo_persona";
+        try (Statement statement = con.createStatement(); ResultSet resultSet = statement.executeQuery(query)) {
+            int columnCount = resultSet.getMetaData().getColumnCount();
+            while (resultSet.next()) {
+                Map<String, Object> row = new HashMap<>();
+                for (int i = 1; i <= columnCount; i++) {
+                    String columnName = resultSet.getMetaData().getColumnName(i);
+                    Object columnValue = resultSet.getObject(i);
+                    row.put(columnName, columnValue);
                 }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
+                corredoresData.add(row);
             }
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
         return corredoresData;
@@ -122,37 +89,21 @@ public class JsonDatos {
 
     private List<Map<String, Object>> calificacionesCorredo() {
         List<Map<String, Object>> calificacionesData = new ArrayList<>();
-        Connection connection = null;
 
-        try {
-            connection = conA.abrirConexion();
-            String query = "SELECT p.nombre, p.apellidos, c.* FROM corredor c JOIN persona p ON c.codigo_persona = p.codigo_persona ORDER BY c.tiempo ASC";
-
-            try (Statement statement = connection.createStatement();
-                 ResultSet resultSet = statement.executeQuery(query)) {
-
-                int columnCount = resultSet.getMetaData().getColumnCount();
-                while (resultSet.next()) {
-                    Map<String, Object> row = new HashMap<>();
-                    for (int i = 1; i <= columnCount; i++) {
-                        String columnName = resultSet.getMetaData().getColumnName(i);
-                        Object columnValue = resultSet.getObject(i);
-                        row.put(columnName, columnValue);
-                    }
-                    calificacionesData.add(row);
+        String query = "SELECT p.nombre, p.apellidos, c.* FROM corredor c JOIN persona p ON c.codigo_persona = p.codigo_persona ORDER BY c.tiempo ASC";
+        try (Statement statement = con.createStatement(); ResultSet resultSet = statement.executeQuery(query)) {
+            int columnCount = resultSet.getMetaData().getColumnCount();
+            while (resultSet.next()) {
+                Map<String, Object> row = new HashMap<>();
+                for (int i = 1; i <= columnCount; i++) {
+                    String columnName = resultSet.getMetaData().getColumnName(i);
+                    Object columnValue = resultSet.getObject(i);
+                    row.put(columnName, columnValue);
                 }
-
-            } catch (SQLException e) {
-                e.printStackTrace();
+                calificacionesData.add(row);
             }
-        } finally {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
         return calificacionesData;

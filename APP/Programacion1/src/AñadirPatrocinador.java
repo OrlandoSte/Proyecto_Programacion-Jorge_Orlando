@@ -147,6 +147,8 @@ public class AñadirPatrocinador extends JFrame {
 					stm.setString(6, tLocalidad.getText());
 					stm.setString(7, tProvincia.getText());
 					stm.executeUpdate();
+					JsonDatos json = new JsonDatos(conA);
+					json.exportarEventoAJson();
 					JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
 					AbrirPatrocinador();
 				}

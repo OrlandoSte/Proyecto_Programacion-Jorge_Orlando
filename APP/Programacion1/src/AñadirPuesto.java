@@ -82,6 +82,8 @@ public class AñadirPuesto extends JFrame {
 					stm.setString(1, tNombre.getText());
 					stm.setString(2, tCometido.getText());
 					stm.executeUpdate();
+					JsonDatos json = new JsonDatos(conA);
+					json.exportarEventoAJson();
 					JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
 				}
 

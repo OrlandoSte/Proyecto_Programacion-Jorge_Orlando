@@ -114,6 +114,8 @@ public class AñadirRecorrido extends JFrame {
 					stm.setString(4, tEstado.getText());
 					stm.setString(5, tObservaciones.getText());
 					stm.executeUpdate();
+					JsonDatos json = new JsonDatos(conA);
+					json.exportarEventoAJson();
 					JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
 				}
 

@@ -118,6 +118,8 @@ public class AñadirCarrera extends JFrame {
         JButton btnAñadirCarrera = new JButton("Añadir");
         btnAñadirCarrera.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
+            	JsonDatos json = new JsonDatos(conA);
+				json.exportarEventoAJson();
                 añadirCarrera();
             }
         });

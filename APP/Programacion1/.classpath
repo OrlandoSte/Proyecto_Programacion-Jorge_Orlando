@@ -6,15 +6,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Bochan/Downloads/Proyecto_Programacion-Jorge_Orlando/Proyecto_Programacion-Jorge_Orlando/APP/mysql-connector-j-8.4.0.jar">
+	<classpathentry kind="lib" path="C:/Users/orlo/Documents/GitHub/Proyecto_Programacion-Jorge_Orlando/APP/mysql-connector-j-8.4.0.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Bochan/Downloads/Proyecto_Programacion-Jorge_Orlando/Proyecto_Programacion-Jorge_Orlando/APP/gson-2.11.0.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/orlo/Documents/GitHub/Proyecto_Programacion-Jorge_Orlando/APP/gson-2.11.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

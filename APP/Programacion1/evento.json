@@ -1,0 +1,243 @@
+{
+  "corredores": [
+    {
+      "apellidos": "Martínez López",
+      "dorsal": 101,
+      "tiempo": "3h 15m",
+      "valido": "S",
+      "club": 1,
+      "codigo_persona": 1,
+      "codigo_carrera": 1,
+      "nombre": "Carlos"
+    },
+    {
+      "apellidos": "García Ruiz",
+      "dorsal": 102,
+      "tiempo": "2h 45m",
+      "valido": "S",
+      "club": 2,
+      "codigo_persona": 2,
+      "codigo_carrera": 2,
+      "nombre": "Ana"
+    },
+    {
+      "apellidos": "Rodríguez Fernández",
+      "dorsal": 103,
+      "tiempo": "1h 30m",
+      "valido": "N",
+      "club": 3,
+      "codigo_persona": 3,
+      "codigo_carrera": 3,
+      "nombre": "Luis"
+    }
+  ],
+  "carreras": [
+    {
+      "cod_categoria": 1,
+      "codigo_carrera": 1,
+      "cod_recorrido": 1,
+      "sexo": "Mixto",
+      "regla": "Reglas Generales",
+      "hora_comienzo": "08:00"
+    },
+    {
+      "cod_categoria": 2,
+      "codigo_carrera": 2,
+      "cod_recorrido": 2,
+      "sexo": "Femenino",
+      "regla": "Reglas Específicas",
+      "hora_comienzo": "09:00"
+    },
+    {
+      "cod_categoria": 3,
+      "codigo_carrera": 3,
+      "cod_recorrido": 3,
+      "sexo": "Masculino",
+      "regla": "Reglas Generales",
+      "hora_comienzo": "07:00"
+    }
+  ],
+  "voluntarios": [
+    {
+      "codigo_persona": 3
+    }
+  ],
+  "trabajadores": [
+    {
+      "fecha_contrato": "ene 15, 2023",
+      "codigo_persona": 1
+    },
+    {
+      "fecha_contrato": "feb 20, 2023",
+      "codigo_persona": 2
+    }
+  ],
+  "calificaciones": [
+    {
+      "apellidos": "Rodríguez Fernández",
+      "dorsal": 103,
+      "tiempo": "1h 30m",
+      "valido": "N",
+      "club": 3,
+      "codigo_persona": 3,
+      "codigo_carrera": 3,
+      "nombre": "Luis"
+    },
+    {
+      "apellidos": "García Ruiz",
+      "dorsal": 102,
+      "tiempo": "2h 45m",
+      "valido": "S",
+      "club": 2,
+      "codigo_persona": 2,
+      "codigo_carrera": 2,
+      "nombre": "Ana"
+    },
+    {
+      "apellidos": "Martínez López",
+      "dorsal": 101,
+      "tiempo": "3h 15m",
+      "valido": "S",
+      "club": 1,
+      "codigo_persona": 1,
+      "codigo_carrera": 1,
+      "nombre": "Carlos"
+    }
+  ],
+  "clubs": [
+    {
+      "responsable": "Juan Pérez",
+      "dirección": "Calle Falsa 123",
+      "teléfono": "123456789",
+      "codigo_club": 1,
+      "nombre": "Club Atlético"
+    },
+    {
+      "responsable": "María Gómez",
+      "dirección": "Avenida Siempreviva 742",
+      "teléfono": "987654321",
+      "codigo_club": 2,
+      "nombre": "Runners Unidos"
+    },
+    {
+      "responsable": "Luis Fernández",
+      "dirección": "Boulevard Central 456",
+      "teléfono": "456123789",
+      "codigo_club": 3,
+      "nombre": "Corredores del Sur"
+    },
+    {
+      "responsable": "Pepito",
+      "dirección": "Instituto",
+      "teléfono": "4564564456",
+      "codigo_club": 4,
+      "nombre": "CPIFP"
+    }
+  ],
+  "patrocinadores": [
+    {
+      "persona_contacto": "Pedro Sánchez",
+      "codigo_postal": "28002",
+      "direccion": "Calle Luna 10",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
+      "codigo_patrocinador": 1,
+      "nombre": "Empresa A"
+    },
+    {
+      "persona_contacto": "Lucía Torres",
+      "codigo_postal": "29016",
+      "direccion": "Avenida Estrella 15",
+      "localidad": "Málaga",
+      "provincia": "Málaga",
+      "codigo_patrocinador": 2,
+      "nombre": "Empresa B"
+    },
+    {
+      "persona_contacto": "Jorge Díaz",
+      "codigo_postal": "41002",
+      "direccion": "Boulevard del Sol 20",
+      "localidad": "Sevilla",
+      "provincia": "Sevilla",
+      "codigo_patrocinador": 3,
+      "nombre": "Empresa C"
+    }
+  ],
+  "personas": [
+    {
+      "apellidos": "Martínez López",
+      "codigo_persona": 1,
+      "fecha_nacimiento": "abr 12, 1985",
+      "direccion": "Calle del Sol 45",
+      "codeigo_postal": "28001",
+      "localidad": "Madrid",
+      "sexo": "Masculino",
+      "provincia": "Madrid",
+      "telefono": "612345678",
+      "nombre": "Carlos",
+      "DNI": "12345678A"
+    },
+    {
+      "apellidos": "García Ruiz",
+      "codigo_persona": 2,
+      "fecha_nacimiento": "jul 22, 1990",
+      "direccion": "Avenida del Mar 3",
+      "codeigo_postal": "29015",
+      "localidad": "Málaga",
+      "sexo": "Femenino",
+      "provincia": "Málaga",
+      "telefono": "623456789",
+      "nombre": "Ana",
+      "DNI": "23456789B"
+    },
+    {
+      "apellidos": "Rodríguez Fernández",
+      "codigo_persona": 3,
+      "fecha_nacimiento": "nov 30, 1975",
+      "direccion": "Plaza Mayor 1",
+      "codeigo_postal": "41001",
+      "localidad": "Sevilla",
+      "sexo": "Masculino",
+      "provincia": "Sevilla",
+      "telefono": "634567890",
+      "nombre": "Luis",
+      "DNI": "34567890C"
+    },
+    {
+      "apellidos": "Ionus",
+      "codigo_persona": 4,
+      "fecha_nacimiento": "dic 18, 1999",
+      "direccion": "Avnd.Maestrazgo",
+      "codeigo_postal": "44600",
+      "localidad": "Alcañiz",
+      "sexo": "H",
+      "provincia": "Teruel",
+      "telefono": "666666666",
+      "nombre": "Orlando",
+      "DNI": "09719327X"
+    }
+  ],
+  "aportaciones": [
+    {
+      "codigo_aportacion": 1,
+      "concepto": "Dinero",
+      "cantidad": "1000 EUR",
+      "codigo_patrocinador": 1,
+      "tipo_aportacion": "Económica"
+    },
+    {
+      "codigo_aportacion": 2,
+      "concepto": "Equipos",
+      "cantidad": "10 unidades",
+      "codigo_patrocinador": 2,
+      "tipo_aportacion": "Material"
+    },
+    {
+      "codigo_aportacion": 3,
+      "concepto": "Bebidas",
+      "cantidad": "500 unidades",
+      "codigo_patrocinador": 3,
+      "tipo_aportacion": "Material"
+    }
+  ]
+}
