@@ -45,10 +45,6 @@ public class Inscribirse extends JFrame {
 	private Conexion conA = new Conexion();
 	private Connection con = conA.abrirConexion();
 
-	/**
-	 * Launch the application.
-	 */
-
 	public void volver() {
 		ProyectoProgramacion form = new ProyectoProgramacion();
 		form.setVisible(true);

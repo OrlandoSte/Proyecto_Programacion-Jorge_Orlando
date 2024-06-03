@@ -32,18 +32,6 @@ public class AñadirCarrera extends JFrame {
     private Conexion conA = new Conexion();
     private Connection con = conA.abrirConexion();
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                	AñadirCarrera frame = new AñadirCarrera();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 
     public void volver() {
     	Admin form = new Admin();

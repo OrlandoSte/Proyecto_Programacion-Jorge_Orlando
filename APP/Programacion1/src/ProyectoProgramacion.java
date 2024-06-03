@@ -14,7 +14,7 @@ public class ProyectoProgramacion extends JFrame {
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Inicia la application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -29,7 +29,7 @@ public class ProyectoProgramacion extends JFrame {
 		});
 	}
 	/**
-	 * Create the frame.
+	 * Crear frame.
 	 */
 	
 	public void abrirInscribirse() {
@@ -48,11 +48,6 @@ public class ProyectoProgramacion extends JFrame {
 		form.setVisible(true);
 		this.dispose();
 	}
-	/*public void abrirInformacion() {
-		Informacion form2=new Informacion();
-		form2.setVisible(true);
-		this.dispose();
-	}*/
 	
 	public ProyectoProgramacion() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
