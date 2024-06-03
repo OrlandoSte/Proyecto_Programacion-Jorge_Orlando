@@ -30,18 +30,7 @@ public class AñadirPuesto extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AñadirPuesto frame = new AñadirPuesto();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	public void volver() {
 		Admin form = new Admin();

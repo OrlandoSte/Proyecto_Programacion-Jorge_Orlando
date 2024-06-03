@@ -34,21 +34,15 @@ public class AñadirPatrocinador extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AñadirPatrocinador frame = new AñadirPatrocinador();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	public void volver() {
 		Admin form = new Admin();
+		form.setVisible(true);
+		this.dispose();
+	}
+	public void abrirDatosPatrocinador() {
+		DatosPatrocinador form = new DatosPatrocinador();
 		form.setVisible(true);
 		this.dispose();
 	}
@@ -118,6 +112,7 @@ public class AñadirPatrocinador extends JFrame {
 		tProvincia.setBounds(198, 165, 114, 19);
 		contentPane.add(tProvincia);
 		tProvincia.setColumns(10);
+		
 
 		JButton btnAñadirClub = new JButton("Añadir");
 		btnAñadirClub.addActionListener(new ActionListener() {
@@ -134,7 +129,7 @@ public class AñadirPatrocinador extends JFrame {
 					java.sql.ResultSet rs = stmt.executeQuery(sql1);
 					int codigo_patr_Ultimo = 0;
 					while (rs.next()) {
-						codigo_patr_Ultimo = rs.getInt("codigo_club");
+						codigo_patr_Ultimo = rs.getInt("codigo_patrocinador");
 					}
 
 					String insert = "INSERT INTO PATROCINADOR (codigo_patrocinador, nombre, persona_contacto, direccion, codigo_postal, localidad, provincia) VALUES (?,?,?,?,?,?,?)";
@@ -167,6 +162,14 @@ public class AñadirPatrocinador extends JFrame {
 		});
 		btnVolver.setBounds(378, 21, 117, 25);
 		contentPane.add(btnVolver);
+		
+		JButton btnVerPatrocinadores = new JButton("Ver patrocinadores");
+		btnVerPatrocinadores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				abrirDatosPatrocinador();
+			}
+		});
+		btnVerPatrocinadores.setBounds(180, 209, 171, 25);
+		contentPane.add(btnVerPatrocinadores);
 	}
-
 }

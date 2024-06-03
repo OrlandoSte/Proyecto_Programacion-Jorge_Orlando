@@ -34,18 +34,7 @@ public class ValidarInscripcion extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ValidarInscripcion frame = new ValidarInscripcion();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 	public void abrirValidacion() {
 		ValidarInscripcion form=new ValidarInscripcion();
 		form.setVisible(true);
