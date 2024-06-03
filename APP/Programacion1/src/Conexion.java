@@ -11,9 +11,9 @@ public class Conexion {
 
     public Connection abrirConexion() {
         try {
-            String userName = "orlo";
-            String password = "Admin@18";
-            String url = "jdbc:mysql://localhost:3306/proyectoprogramación2";
+            String userName = "bd";
+            String password = "proyecto";
+            String url = "jdbc:mysql://localhost:3306/ProyectoProgramación";
             
             con = DriverManager.getConnection(url, userName, password);
             
