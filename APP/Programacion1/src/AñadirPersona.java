@@ -66,6 +66,12 @@ public class AñadirPersona extends JFrame {
 		form.setVisible(true);
 		this.dispose();
 	}
+	
+	public void DatosPersonasCorredoras() {
+		DatosPersonasCorredoras form = new DatosPersonasCorredoras();
+		form.setVisible(true);
+		this.dispose();
+	}
 
 
 
@@ -274,6 +280,15 @@ public class AñadirPersona extends JFrame {
 		lblPuesto_1 = new JLabel("Puesto:");
 		lblPuesto_1.setBounds(230, 420, 70, 15);
 		contentPane.add(lblPuesto_1);
+		
+		JButton btnVerPatrocinadores = new JButton("Ver corredores");
+		btnVerPatrocinadores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				DatosPersonasCorredoras();
+			}
+		});
+		btnVerPatrocinadores.setBounds(180, 455, 171, 25);
+		contentPane.add(btnVerPatrocinadores);
 	}
 
 	private void desplegableClub() {
@@ -334,7 +349,7 @@ public class AñadirPersona extends JFrame {
 	public int calcularCarrera() {
 		try {
 
-			String query = "SELECT nombre FROM CLUB";
+			String query = "SELECT nombre FROM club";
 			PreparedStatement stmt = con.prepareStatement(query);
 			ResultSet rs = stmt.executeQuery();
 

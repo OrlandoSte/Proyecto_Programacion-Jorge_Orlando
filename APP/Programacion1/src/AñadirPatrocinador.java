@@ -46,6 +46,11 @@ public class AñadirPatrocinador extends JFrame {
 		form.setVisible(true);
 		this.dispose();
 	}
+	public void AbrirPatrocinador() {
+		AñadirPatrocinador form = new AñadirPatrocinador();
+		form.setVisible(true);
+		this.dispose();
+	}
 
 	/**
 	 * Create the frame.
@@ -143,6 +148,7 @@ public class AñadirPatrocinador extends JFrame {
 					stm.setString(7, tProvincia.getText());
 					stm.executeUpdate();
 					JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
+					AbrirPatrocinador();
 				}
 
 				catch (SQLException e) {

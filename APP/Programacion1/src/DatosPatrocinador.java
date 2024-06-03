@@ -31,6 +31,12 @@ public class DatosPatrocinador extends JFrame {
 	private Conexion conA = new Conexion();
 	private Connection con = conA.abrirConexion();
 
+	public void volver() {
+		AñadirPatrocinador form = new AñadirPatrocinador();
+		form.setVisible(true);
+		this.dispose();
+	}
+	
 
 	public DatosPatrocinador() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,6 +54,15 @@ public class DatosPatrocinador extends JFrame {
 		tableModel = new DefaultTableModel(new Object[] { "Código", "Detalles Patrocinador"}, 0);
 		table = new JTable(tableModel);
 		scrollPane.setViewportView(table);
+		
+		JButton btnVolver = new JButton("VOLVER");
+		btnVolver.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				volver();
+			}
+		});
+		btnVolver.setBounds(321, 429, 229, 27);
+		contentPane.add(btnVolver);
 
 		loadTableData();
 	}

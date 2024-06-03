@@ -38,6 +38,12 @@ public class AñadirCarrera extends JFrame {
         form.setVisible(true);
         this.dispose();
     }
+    
+    public void abrirDatosCarrera() {
+    	DatosCarrera form = new DatosCarrera();
+        form.setVisible(true);
+        this.dispose();
+    }
 
     public AñadirCarrera() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -126,6 +132,15 @@ public class AñadirCarrera extends JFrame {
         });
         btnVolver.setBounds(378, 21, 117, 25);
         contentPane.add(btnVolver);
+        
+		JButton btnVerPatrocinadores = new JButton("Ver carreras");
+		btnVerPatrocinadores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				abrirDatosCarrera();
+			}
+		});
+		btnVerPatrocinadores.setBounds(180, 209, 171, 25);
+		contentPane.add(btnVerPatrocinadores);
     }
 
     private void desplegableCategoria() {
