@@ -1,34 +1,104 @@
 {
   "corredores": [
     {
-      "apellidos": "Martínez López",
+      "apellidos": "Pérez Gómez",
       "dorsal": 101,
-      "tiempo": "3h 15m",
-      "valido": "S",
+      "tiempo": "00:45:30",
+      "valido": "t",
       "club": 1,
       "codigo_persona": 1,
       "codigo_carrera": 1,
-      "nombre": "Carlos"
+      "nombre": "Juan"
     },
     {
-      "apellidos": "García Ruiz",
+      "apellidos": "Gómez Ruiz",
       "dorsal": 102,
-      "tiempo": "2h 45m",
-      "valido": "S",
+      "tiempo": "00:50:00",
+      "valido": "t",
       "club": 2,
       "codigo_persona": 2,
       "codigo_carrera": 2,
       "nombre": "Ana"
     },
     {
-      "apellidos": "Rodríguez Fernández",
+      "apellidos": "Fernández López",
       "dorsal": 103,
-      "tiempo": "1h 30m",
-      "valido": "N",
+      "tiempo": "00:48:15",
+      "valido": "t",
       "club": 3,
       "codigo_persona": 3,
       "codigo_carrera": 3,
       "nombre": "Luis"
+    },
+    {
+      "apellidos": "López Martínez",
+      "dorsal": 104,
+      "tiempo": "01:10:45",
+      "valido": "t",
+      "club": 4,
+      "codigo_persona": 4,
+      "codigo_carrera": 4,
+      "nombre": "María"
+    },
+    {
+      "apellidos": "Martínez Pérez",
+      "dorsal": 105,
+      "tiempo": "00:55:30",
+      "valido": "t",
+      "club": 5,
+      "codigo_persona": 5,
+      "codigo_carrera": 5,
+      "nombre": "Carlos"
+    },
+    {
+      "apellidos": "González Sánchez",
+      "dorsal": 106,
+      "tiempo": "00:52:20",
+      "valido": "t",
+      "club": 6,
+      "codigo_persona": 6,
+      "codigo_carrera": 6,
+      "nombre": "Sofía"
+    },
+    {
+      "apellidos": "Sánchez Fernández",
+      "dorsal": 107,
+      "tiempo": "00:47:10",
+      "valido": "t",
+      "club": 7,
+      "codigo_persona": 7,
+      "codigo_carrera": 7,
+      "nombre": "Miguel"
+    },
+    {
+      "apellidos": "Jiménez Gómez",
+      "dorsal": 108,
+      "tiempo": "01:00:00",
+      "valido": "t",
+      "club": 8,
+      "codigo_persona": 8,
+      "codigo_carrera": 8,
+      "nombre": "Laura"
+    },
+    {
+      "apellidos": "Rodríguez Ruiz",
+      "dorsal": 109,
+      "tiempo": "00:49:50",
+      "valido": "t",
+      "club": 9,
+      "codigo_persona": 9,
+      "codigo_carrera": 9,
+      "nombre": "David"
+    },
+    {
+      "apellidos": "Hernández López",
+      "dorsal": 110,
+      "tiempo": "00:54:10",
+      "valido": "t",
+      "club": 10,
+      "codigo_persona": 10,
+      "codigo_carrera": 10,
+      "nombre": "Andrea"
     }
   ],
   "carreras": [
@@ -36,208 +106,625 @@
       "cod_categoria": 1,
       "codigo_carrera": 1,
       "cod_recorrido": 1,
-      "sexo": "Mixto",
-      "regla": "Reglas Generales",
-      "hora_comienzo": "08:00"
+      "sexo": "Masculino",
+      "regla": "Regla 1",
+      "hora_comienzo": "08:00 AM"
     },
     {
       "cod_categoria": 2,
       "codigo_carrera": 2,
       "cod_recorrido": 2,
       "sexo": "Femenino",
-      "regla": "Reglas Específicas",
-      "hora_comienzo": "09:00"
+      "regla": "Regla 2",
+      "hora_comienzo": "09:00 AM"
     },
     {
       "cod_categoria": 3,
       "codigo_carrera": 3,
       "cod_recorrido": 3,
+      "sexo": "Mixto",
+      "regla": "Regla 3",
+      "hora_comienzo": "10:00 AM"
+    },
+    {
+      "cod_categoria": 4,
+      "codigo_carrera": 4,
+      "cod_recorrido": 4,
       "sexo": "Masculino",
-      "regla": "Reglas Generales",
-      "hora_comienzo": "07:00"
+      "regla": "Regla 4",
+      "hora_comienzo": "11:00 AM"
+    },
+    {
+      "cod_categoria": 5,
+      "codigo_carrera": 5,
+      "cod_recorrido": 5,
+      "sexo": "Femenino",
+      "regla": "Regla 5",
+      "hora_comienzo": "12:00 PM"
+    },
+    {
+      "cod_categoria": 6,
+      "codigo_carrera": 6,
+      "cod_recorrido": 6,
+      "sexo": "Mixto",
+      "regla": "Regla 6",
+      "hora_comienzo": "01:00 PM"
+    },
+    {
+      "cod_categoria": 7,
+      "codigo_carrera": 7,
+      "cod_recorrido": 7,
+      "sexo": "Masculino",
+      "regla": "Regla 7",
+      "hora_comienzo": "02:00 PM"
+    },
+    {
+      "cod_categoria": 8,
+      "codigo_carrera": 8,
+      "cod_recorrido": 8,
+      "sexo": "Femenino",
+      "regla": "Regla 8",
+      "hora_comienzo": "03:00 PM"
+    },
+    {
+      "cod_categoria": 9,
+      "codigo_carrera": 9,
+      "cod_recorrido": 9,
+      "sexo": "Mixto",
+      "regla": "Regla 9",
+      "hora_comienzo": "04:00 PM"
+    },
+    {
+      "cod_categoria": 10,
+      "codigo_carrera": 10,
+      "cod_recorrido": 10,
+      "sexo": "Masculino",
+      "regla": "Regla 10",
+      "hora_comienzo": "05:00 PM"
     }
   ],
   "voluntarios": [
     {
+      "codigo_persona": 1
+    },
+    {
+      "codigo_persona": 2
+    },
+    {
       "codigo_persona": 3
+    },
+    {
+      "codigo_persona": 4
+    },
+    {
+      "codigo_persona": 5
+    },
+    {
+      "codigo_persona": 6
+    },
+    {
+      "codigo_persona": 7
+    },
+    {
+      "codigo_persona": 8
+    },
+    {
+      "codigo_persona": 9
+    },
+    {
+      "codigo_persona": 10
     }
   ],
   "trabajadores": [
     {
-      "fecha_contrato": "ene 15, 2023",
+      "fecha_contrato": "ene 1, 2022",
       "codigo_persona": 1
     },
     {
-      "fecha_contrato": "feb 20, 2023",
+      "fecha_contrato": "feb 1, 2022",
       "codigo_persona": 2
+    },
+    {
+      "fecha_contrato": "mar 1, 2022",
+      "codigo_persona": 3
+    },
+    {
+      "fecha_contrato": "abr 1, 2022",
+      "codigo_persona": 4
+    },
+    {
+      "fecha_contrato": "may 1, 2022",
+      "codigo_persona": 5
+    },
+    {
+      "fecha_contrato": "jun 1, 2022",
+      "codigo_persona": 6
+    },
+    {
+      "fecha_contrato": "jul 1, 2022",
+      "codigo_persona": 7
+    },
+    {
+      "fecha_contrato": "ago 1, 2022",
+      "codigo_persona": 8
+    },
+    {
+      "fecha_contrato": "sept 1, 2022",
+      "codigo_persona": 9
+    },
+    {
+      "fecha_contrato": "oct 1, 2022",
+      "codigo_persona": 10
     }
   ],
   "calificaciones": [
     {
-      "apellidos": "Rodríguez Fernández",
+      "apellidos": "Pérez Gómez",
+      "dorsal": 101,
+      "tiempo": "00:45:30",
+      "valido": "t",
+      "club": 1,
+      "codigo_persona": 1,
+      "codigo_carrera": 1,
+      "nombre": "Juan"
+    },
+    {
+      "apellidos": "Sánchez Fernández",
+      "dorsal": 107,
+      "tiempo": "00:47:10",
+      "valido": "t",
+      "club": 7,
+      "codigo_persona": 7,
+      "codigo_carrera": 7,
+      "nombre": "Miguel"
+    },
+    {
+      "apellidos": "Fernández López",
       "dorsal": 103,
-      "tiempo": "1h 30m",
-      "valido": "N",
+      "tiempo": "00:48:15",
+      "valido": "t",
       "club": 3,
       "codigo_persona": 3,
       "codigo_carrera": 3,
       "nombre": "Luis"
     },
     {
-      "apellidos": "García Ruiz",
+      "apellidos": "Rodríguez Ruiz",
+      "dorsal": 109,
+      "tiempo": "00:49:50",
+      "valido": "t",
+      "club": 9,
+      "codigo_persona": 9,
+      "codigo_carrera": 9,
+      "nombre": "David"
+    },
+    {
+      "apellidos": "Gómez Ruiz",
       "dorsal": 102,
-      "tiempo": "2h 45m",
-      "valido": "S",
+      "tiempo": "00:50:00",
+      "valido": "t",
       "club": 2,
       "codigo_persona": 2,
       "codigo_carrera": 2,
       "nombre": "Ana"
     },
     {
-      "apellidos": "Martínez López",
-      "dorsal": 101,
-      "tiempo": "3h 15m",
-      "valido": "S",
-      "club": 1,
-      "codigo_persona": 1,
-      "codigo_carrera": 1,
+      "apellidos": "González Sánchez",
+      "dorsal": 106,
+      "tiempo": "00:52:20",
+      "valido": "t",
+      "club": 6,
+      "codigo_persona": 6,
+      "codigo_carrera": 6,
+      "nombre": "Sofía"
+    },
+    {
+      "apellidos": "Hernández López",
+      "dorsal": 110,
+      "tiempo": "00:54:10",
+      "valido": "t",
+      "club": 10,
+      "codigo_persona": 10,
+      "codigo_carrera": 10,
+      "nombre": "Andrea"
+    },
+    {
+      "apellidos": "Martínez Pérez",
+      "dorsal": 105,
+      "tiempo": "00:55:30",
+      "valido": "t",
+      "club": 5,
+      "codigo_persona": 5,
+      "codigo_carrera": 5,
       "nombre": "Carlos"
+    },
+    {
+      "apellidos": "Jiménez Gómez",
+      "dorsal": 108,
+      "tiempo": "01:00:00",
+      "valido": "t",
+      "club": 8,
+      "codigo_persona": 8,
+      "codigo_carrera": 8,
+      "nombre": "Laura"
+    },
+    {
+      "apellidos": "López Martínez",
+      "dorsal": 104,
+      "tiempo": "01:10:45",
+      "valido": "t",
+      "club": 4,
+      "codigo_persona": 4,
+      "codigo_carrera": 4,
+      "nombre": "María"
     }
   ],
   "clubs": [
     {
       "responsable": "Juan Pérez",
-      "dirección": "Calle Falsa 123",
-      "teléfono": "123456789",
+      "dirección": "Calle Sol 123",
+      "teléfono": "658573581",
       "codigo_club": 1,
-      "nombre": "Club Atlético"
+      "nombre": "Club Corredores del Sol"
     },
     {
-      "responsable": "María Gómez",
-      "dirección": "Avenida Siempreviva 742",
-      "teléfono": "987654321",
+      "responsable": "Ana Gómez",
+      "dirección": "Avenida Montaña 456",
+      "teléfono": "658573581",
       "codigo_club": 2,
-      "nombre": "Runners Unidos"
+      "nombre": "Club Montañeros Unidos"
     },
     {
       "responsable": "Luis Fernández",
-      "dirección": "Boulevard Central 456",
-      "teléfono": "456123789",
+      "dirección": "Boulevard Río 789",
+      "teléfono": "658573581",
       "codigo_club": 3,
-      "nombre": "Corredores del Sur"
+      "nombre": "Club Río Runners"
     },
     {
-      "responsable": "Pepito",
-      "dirección": "Instituto",
-      "teléfono": "4564564456",
+      "responsable": "María López",
+      "dirección": "Plaza Central 101",
+      "teléfono": "658573581",
       "codigo_club": 4,
-      "nombre": "CPIFP"
+      "nombre": "Club Urban Runners"
+    },
+    {
+      "responsable": "Carlos Martínez",
+      "dirección": "Camino Bosque 202",
+      "teléfono": "658573581",
+      "codigo_club": 5,
+      "nombre": "Club Bosque Trail"
+    },
+    {
+      "responsable": "Sofía González",
+      "dirección": "Calle Historia 303",
+      "teléfono": "658573581",
+      "codigo_club": 6,
+      "nombre": "Club Historia Viva"
+    },
+    {
+      "responsable": "Miguel Sánchez",
+      "dirección": "Lago Azul 404",
+      "teléfono": "658573581",
+      "codigo_club": 7,
+      "nombre": "Club Lago Azul"
+    },
+    {
+      "responsable": "Laura Jiménez",
+      "dirección": "Desierto 505",
+      "teléfono": "658573581",
+      "codigo_club": 8,
+      "nombre": "Club Desierto"
+    },
+    {
+      "responsable": "David Rodríguez",
+      "dirección": "Valle Verde 606",
+      "teléfono": "658573581",
+      "codigo_club": 9,
+      "nombre": "Club Valle Verde"
+    },
+    {
+      "responsable": "Andrea Hernández",
+      "dirección": "Mixto 707",
+      "teléfono": "658573581",
+      "codigo_club": 10,
+      "nombre": "Club Mixto"
     }
   ],
   "patrocinadores": [
     {
-      "persona_contacto": "Pedro Sánchez",
-      "codigo_postal": "28002",
-      "direccion": "Calle Luna 10",
+      "persona_contacto": "Contacto 1",
+      "codigo_postal": "28001",
+      "direccion": "Dirección 1",
       "localidad": "Madrid",
       "provincia": "Madrid",
       "codigo_patrocinador": 1,
-      "nombre": "Empresa A"
+      "nombre": "Empresa 1"
     },
     {
-      "persona_contacto": "Lucía Torres",
-      "codigo_postal": "29016",
-      "direccion": "Avenida Estrella 15",
-      "localidad": "Málaga",
-      "provincia": "Málaga",
+      "persona_contacto": "Contacto 2",
+      "codigo_postal": "28002",
+      "direccion": "Dirección 2",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
       "codigo_patrocinador": 2,
-      "nombre": "Empresa B"
+      "nombre": "Empresa 2"
     },
     {
-      "persona_contacto": "Jorge Díaz",
-      "codigo_postal": "41002",
-      "direccion": "Boulevard del Sol 20",
-      "localidad": "Sevilla",
-      "provincia": "Sevilla",
+      "persona_contacto": "Contacto 3",
+      "codigo_postal": "28003",
+      "direccion": "Dirección 3",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
       "codigo_patrocinador": 3,
-      "nombre": "Empresa C"
+      "nombre": "Empresa 3"
+    },
+    {
+      "persona_contacto": "Contacto 4",
+      "codigo_postal": "28004",
+      "direccion": "Dirección 4",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
+      "codigo_patrocinador": 4,
+      "nombre": "Empresa 4"
+    },
+    {
+      "persona_contacto": "Contacto 5",
+      "codigo_postal": "28005",
+      "direccion": "Dirección 5",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
+      "codigo_patrocinador": 5,
+      "nombre": "Empresa 5"
+    },
+    {
+      "persona_contacto": "Contacto 6",
+      "codigo_postal": "28006",
+      "direccion": "Dirección 6",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
+      "codigo_patrocinador": 6,
+      "nombre": "Empresa 6"
+    },
+    {
+      "persona_contacto": "Contacto 7",
+      "codigo_postal": "28007",
+      "direccion": "Dirección 7",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
+      "codigo_patrocinador": 7,
+      "nombre": "Empresa 7"
+    },
+    {
+      "persona_contacto": "Contacto 8",
+      "codigo_postal": "28008",
+      "direccion": "Dirección 8",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
+      "codigo_patrocinador": 8,
+      "nombre": "Empresa 8"
+    },
+    {
+      "persona_contacto": "Contacto 9",
+      "codigo_postal": "28009",
+      "direccion": "Dirección 9",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
+      "codigo_patrocinador": 9,
+      "nombre": "Empresa 9"
+    },
+    {
+      "persona_contacto": "Contacto 10",
+      "codigo_postal": "28010",
+      "direccion": "Dirección 10",
+      "localidad": "Madrid",
+      "provincia": "Madrid",
+      "codigo_patrocinador": 10,
+      "nombre": "Empresa 10"
     }
   ],
   "personas": [
     {
-      "apellidos": "Martínez López",
+      "apellidos": "Pérez Gómez",
       "codigo_persona": 1,
-      "fecha_nacimiento": "abr 12, 1985",
-      "direccion": "Calle del Sol 45",
-      "codeigo_postal": "28001",
+      "fecha_nacimiento": "ene 1, 1980",
+      "direccion": "Calle Falsa 123",
+      "codeigo_postal": "28080",
       "localidad": "Madrid",
-      "sexo": "Masculino",
+      "sexo": "H",
       "provincia": "Madrid",
-      "telefono": "612345678",
-      "nombre": "Carlos",
+      "telefono": "600123456",
+      "nombre": "Juan",
       "DNI": "12345678A"
     },
     {
-      "apellidos": "García Ruiz",
+      "apellidos": "Gómez Ruiz",
       "codigo_persona": 2,
-      "fecha_nacimiento": "jul 22, 1990",
-      "direccion": "Avenida del Mar 3",
-      "codeigo_postal": "29015",
-      "localidad": "Málaga",
-      "sexo": "Femenino",
-      "provincia": "Málaga",
-      "telefono": "623456789",
+      "fecha_nacimiento": "feb 2, 1990",
+      "direccion": "Calle Verdad 456",
+      "codeigo_postal": "28081",
+      "localidad": "Madrid",
+      "sexo": "M",
+      "provincia": "Madrid",
+      "telefono": "600234567",
       "nombre": "Ana",
       "DNI": "23456789B"
     },
     {
-      "apellidos": "Rodríguez Fernández",
+      "apellidos": "Fernández López",
       "codigo_persona": 3,
-      "fecha_nacimiento": "nov 30, 1975",
-      "direccion": "Plaza Mayor 1",
-      "codeigo_postal": "41001",
-      "localidad": "Sevilla",
-      "sexo": "Masculino",
-      "provincia": "Sevilla",
-      "telefono": "634567890",
+      "fecha_nacimiento": "mar 3, 1985",
+      "direccion": "Avenida Prin 789",
+      "codeigo_postal": "28082",
+      "localidad": "Madrid",
+      "sexo": "H",
+      "provincia": "Madrid",
+      "telefono": "600345678",
       "nombre": "Luis",
       "DNI": "34567890C"
     },
     {
-      "apellidos": "Ionus",
+      "apellidos": "López Martínez",
       "codigo_persona": 4,
-      "fecha_nacimiento": "dic 18, 1999",
-      "direccion": "Avnd.Maestrazgo",
-      "codeigo_postal": "44600",
-      "localidad": "Alcañiz",
+      "fecha_nacimiento": "abr 4, 1975",
+      "direccion": "Plaza Mayor 101",
+      "codeigo_postal": "28083",
+      "localidad": "Madrid",
+      "sexo": "M",
+      "provincia": "Madrid",
+      "telefono": "600456789",
+      "nombre": "María",
+      "DNI": "45678901D"
+    },
+    {
+      "apellidos": "Martínez Pérez",
+      "codigo_persona": 5,
+      "fecha_nacimiento": "may 5, 1965",
+      "direccion": "Calle Secundaria 202",
+      "codeigo_postal": "28084",
+      "localidad": "Madrid",
       "sexo": "H",
-      "provincia": "Teruel",
-      "telefono": "666666666",
-      "nombre": "Orlando",
-      "DNI": "09719327X"
+      "provincia": "Madrid",
+      "telefono": "600567890",
+      "nombre": "Carlos",
+      "DNI": "56789012E"
+    },
+    {
+      "apellidos": "González Sánchez",
+      "codigo_persona": 6,
+      "fecha_nacimiento": "jun 6, 2000",
+      "direccion": "Camino Largo 303",
+      "codeigo_postal": "28085",
+      "localidad": "Madrid",
+      "sexo": "M",
+      "provincia": "Madrid",
+      "telefono": "600678901",
+      "nombre": "Sofía",
+      "DNI": "67890123F"
+    },
+    {
+      "apellidos": "Sánchez Fernández",
+      "codigo_persona": 7,
+      "fecha_nacimiento": "jul 7, 1995",
+      "direccion": "Carretera Lejana 404",
+      "codeigo_postal": "28086",
+      "localidad": "Madrid",
+      "sexo": "H",
+      "provincia": "Madrid",
+      "telefono": "600789012",
+      "nombre": "Miguel",
+      "DNI": "78901234G"
+    },
+    {
+      "apellidos": "Jiménez Gómez",
+      "codigo_persona": 8,
+      "fecha_nacimiento": "ago 8, 1988",
+      "direccion": "Paseo Corto 505",
+      "codeigo_postal": "28087",
+      "localidad": "Madrid",
+      "sexo": "M",
+      "provincia": "Madrid",
+      "telefono": "600890123",
+      "nombre": "Laura",
+      "DNI": "89012345H"
+    },
+    {
+      "apellidos": "Rodríguez Ruiz",
+      "codigo_persona": 9,
+      "fecha_nacimiento": "sept 9, 1978",
+      "direccion": "Ronda Grande 606",
+      "codeigo_postal": "28088",
+      "localidad": "Madrid",
+      "sexo": "H",
+      "provincia": "Madrid",
+      "telefono": "600901234",
+      "nombre": "David",
+      "DNI": "90123456I"
+    },
+    {
+      "apellidos": "Hernández López",
+      "codigo_persona": 10,
+      "fecha_nacimiento": "oct 10, 1983",
+      "direccion": "Travesía Pequeña 707",
+      "codeigo_postal": "28089",
+      "localidad": "Madrid",
+      "sexo": "M",
+      "provincia": "Madrid",
+      "telefono": "600012345",
+      "nombre": "Andrea",
+      "DNI": "01234567J"
     }
   ],
   "aportaciones": [
     {
       "codigo_aportacion": 1,
       "concepto": "Dinero",
-      "cantidad": "1000 EUR",
+      "cantidad": "1000€",
       "codigo_patrocinador": 1,
-      "tipo_aportacion": "Económica"
+      "tipo_aportacion": "Monetaria"
     },
     {
       "codigo_aportacion": 2,
-      "concepto": "Equipos",
-      "cantidad": "10 unidades",
+      "concepto": "Material",
+      "cantidad": "100",
       "codigo_patrocinador": 2,
-      "tipo_aportacion": "Material"
+      "tipo_aportacion": "Camisetas"
     },
     {
       "codigo_aportacion": 3,
-      "concepto": "Bebidas",
-      "cantidad": "500 unidades",
+      "concepto": "Dinero",
+      "cantidad": "2000€",
       "codigo_patrocinador": 3,
-      "tipo_aportacion": "Material"
+      "tipo_aportacion": "Monetaria"
+    },
+    {
+      "codigo_aportacion": 4,
+      "concepto": "Material",
+      "cantidad": "300",
+      "codigo_patrocinador": 4,
+      "tipo_aportacion": "Botellas Agua"
+    },
+    {
+      "codigo_aportacion": 5,
+      "concepto": "Dinero",
+      "cantidad": "1500€",
+      "codigo_patrocinador": 5,
+      "tipo_aportacion": "Monetaria"
+    },
+    {
+      "codigo_aportacion": 6,
+      "concepto": "Material",
+      "cantidad": "600",
+      "codigo_patrocinador": 6,
+      "tipo_aportacion": "Botellas Agua"
+    },
+    {
+      "codigo_aportacion": 7,
+      "concepto": "Dinero",
+      "cantidad": "800€",
+      "codigo_patrocinador": 7,
+      "tipo_aportacion": "Monetaria"
+    },
+    {
+      "codigo_aportacion": 8,
+      "concepto": "Material",
+      "cantidad": "700",
+      "codigo_patrocinador": 8,
+      "tipo_aportacion": "Refrescos"
+    },
+    {
+      "codigo_aportacion": 9,
+      "concepto": "Dinero",
+      "cantidad": "2500€",
+      "codigo_patrocinador": 9,
+      "tipo_aportacion": "Monetaria"
+    },
+    {
+      "codigo_aportacion": 10,
+      "concepto": "Material",
+      "cantidad": "400",
+      "codigo_patrocinador": 10,
+      "tipo_aportacion": "Panfletos"
     }
   ]
 }
