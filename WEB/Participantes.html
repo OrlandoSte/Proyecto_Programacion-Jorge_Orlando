@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <title>Carrera</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
   </head>
   <body id="body">
     <nav class="menu">
@@ -13,33 +14,49 @@
         <li><a href="Contacto.html">Contacto</a></li>
       </ul>
     </nav>
-    <nav class="info">
-      <h3>Informacion</h3>
-      <br>
-      <p>Sección 1.10.33 de "de Finibus Bonorum et Malorum", escrito por Cicero en el 45 antes de Cristo
-        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
-        similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-        rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-        impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae
-        sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
-        maiores alias consequatur aut perferendis doloribus asperiores repellat."
-      </p>
-    </nav>
+   
+    <div id="claseIntroduccion">
+      <div class="textoIntroduccion">
+        <table id="data-table">
+          <thead>
+              <tr>
+                  
+                  <th>Num Carrera</th>
+                  <th>Nombre Completo</th>
+                  <th>Dorsal</th>
+                  <th>Tiempo</th>
+                  
+                  
+              </tr>
+          </thead>
+    
+          <tbody>
+              
+          </tbody>
+      </table>
+      </div>
+      <div class="pagination">
+        <button id="prevBtn" onclick="prevPage()">Anterior</button>
+        <button id="nextBtn" onclick="nextPage()">Siguiente</button>
+    </div>
+    </div>
+  
+
+
   </body>
   <footer>
-    <nav>
+    <nav id="caja1">
       <p>&copy; 2024 JorLan. Todos los derechos reservados.</p>
       <p>Información de contacto: proyecto@carrerapopular.com</p><br>
+    </nav>
+    <nav id="caja2">
       <p>Síguenos en redes sociales: 
-        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Logo Facebook" class="redes"></a> 
-        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" alt="Logo Twitter" class="redes"></a>
-        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1000px-Instagram_logo_2022.svg.png" alt="Logo Instagram" class="redes"></a>
+        <a href="www.facebook.com"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Logo Facebook" class="redes"></a> 
+        <a href="https://x.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" alt="Logo Twitter" class="redes"></a>
+        <a href="https://www.instagram.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1000px-Instagram_logo_2022.svg.png" alt="Logo Instagram" class="redes"></a>
       </p>
     </nav>
     
 
   </footer>
 </html>
-<script src="script.js"></script>

@@ -1,0 +1,102 @@
+[
+    {
+      "apellidos": "Pérez Gómez",
+      "dorsal": 101,
+      "tiempo": "00:45:30",
+      "valido": "t",
+      "club": 1,
+      "codigo_persona": 1,
+      "codigo_carrera": 1,
+      "nombre": "Juan"
+    },
+    {
+      "apellidos": "Sánchez Fernández",
+      "dorsal": 107,
+      "tiempo": "00:47:10",
+      "valido": "t",
+      "club": 7,
+      "codigo_persona": 7,
+      "codigo_carrera": 7,
+      "nombre": "Miguel"
+    },
+    {
+      "apellidos": "Fernández López",
+      "dorsal": 103,
+      "tiempo": "00:48:15",
+      "valido": "t",
+      "club": 3,
+      "codigo_persona": 3,
+      "codigo_carrera": 3,
+      "nombre": "Luis"
+    },
+    {
+      "apellidos": "Rodríguez Ruiz",
+      "dorsal": 109,
+      "tiempo": "00:49:50",
+      "valido": "t",
+      "club": 9,
+      "codigo_persona": 9,
+      "codigo_carrera": 9,
+      "nombre": "David"
+    },
+    {
+      "apellidos": "Gómez Ruiz",
+      "dorsal": 102,
+      "tiempo": "00:50:00",
+      "valido": "t",
+      "club": 2,
+      "codigo_persona": 2,
+      "codigo_carrera": 2,
+      "nombre": "Ana"
+    },
+    {
+      "apellidos": "González Sánchez",
+      "dorsal": 106,
+      "tiempo": "00:52:20",
+      "valido": "t",
+      "club": 6,
+      "codigo_persona": 6,
+      "codigo_carrera": 6,
+      "nombre": "Sofía"
+    },
+    {
+      "apellidos": "Hernández López",
+      "dorsal": 110,
+      "tiempo": "00:54:10",
+      "valido": "t",
+      "club": 10,
+      "codigo_persona": 10,
+      "codigo_carrera": 10,
+      "nombre": "Andrea"
+    },
+    {
+      "apellidos": "Martínez Pérez",
+      "dorsal": 105,
+      "tiempo": "00:55:30",
+      "valido": "t",
+      "club": 5,
+      "codigo_persona": 5,
+      "codigo_carrera": 5,
+      "nombre": "Carlos"
+    },
+    {
+      "apellidos": "Jiménez Gómez",
+      "dorsal": 108,
+      "tiempo": "01:00:00",
+      "valido": "t",
+      "club": 8,
+      "codigo_persona": 8,
+      "codigo_carrera": 8,
+      "nombre": "Laura"
+    },
+    {
+      "apellidos": "López Martínez",
+      "dorsal": 104,
+      "tiempo": "01:10:45",
+      "valido": "t",
+      "club": 4,
+      "codigo_persona": 4,
+      "codigo_carrera": 4,
+      "nombre": "María"
+    }
+  ]

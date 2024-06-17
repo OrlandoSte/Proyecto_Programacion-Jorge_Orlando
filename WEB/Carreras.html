@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <title>Carrera</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
   </head>
   <body id="body">
     <nav class="menu">
@@ -14,46 +15,48 @@
       </ul>
     </nav>
    
-          <table class="table">
+    <div id="claseIntroduccion">
+      <div class="textoIntroduccion">
+        <table id="data-table">
           <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Position</th>
-              <th>Office</th>
-              <th>Age</th>
-              <th>Start Date</th>
-            </tr>
-          </thead>
-            <tbody>
-              <tr ng-repeat="n in data">
-                <td>{{$index+1}}</td>
-                <td>{{n[0]}}</td>
-                <td>{{n[1]}}</td>
-                <td>{{n[2]}}</td>
-                <td>{{n[3]}}</td>
-                <td>{{n[4] | date:'dd/MM/yyyy'}}</td>
+              <tr>
+                  
+                  <th>Num Carrera</th>
+                  <th>Nombre Completo</th>
+                  <th>Dorsal</th>
+                  <th>Tiempo</th>
+                  
+                  
               </tr>
-            </tbody>
-        </table>
+          </thead>
+    
+          <tbody>
+              
+          </tbody>
+      </table>
       </div>
+      <div class="pagination">
+        <button id="prevBtn" onclick="prevPage()">Anterior</button>
+        <button id="nextBtn" onclick="nextPage()">Siguiente</button>
     </div>
     </div>
+  
 
 
   </body>
   <footer>
-    <nav>
+    <nav id="caja1">
       <p>&copy; 2024 JorLan. Todos los derechos reservados.</p>
       <p>Información de contacto: proyecto@carrerapopular.com</p><br>
+    </nav>
+    <nav id="caja2">
       <p>Síguenos en redes sociales: 
-        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Logo Facebook" class="redes"></a> 
-        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" alt="Logo Twitter" class="redes"></a>
-        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1000px-Instagram_logo_2022.svg.png" alt="Logo Instagram" class="redes"></a>
+        <a href="www.facebook.com"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Logo Facebook" class="redes"></a> 
+        <a href="https://x.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" alt="Logo Twitter" class="redes"></a>
+        <a href="https://www.instagram.com"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1000px-Instagram_logo_2022.svg.png" alt="Logo Instagram" class="redes"></a>
       </p>
     </nav>
     
 
   </footer>
 </html>
-<script src="script.js"></script>
