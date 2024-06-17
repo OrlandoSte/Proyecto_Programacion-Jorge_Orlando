@@ -133,3 +133,9 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
+
+.pagination {
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+}

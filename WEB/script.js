@@ -4,28 +4,27 @@ async function loadData() {
 
     const data = await response.json();
 
-
     const tableBody = document.getElementById('data-table').getElementsByTagName('tbody')[0];
 
     data.forEach(item => {
         const row = document.createElement('tr');
         
-        const cellCod_carrera = document.createElement('td');
-        cellCod_carrera.textContent = item.codigo_carrera;
-        row.appendChild(cellCod_carrera);
+        const cod_Carrera = document.createElement('td');
+        cod_Carrera.textContent = item.codigo_carrera;
+        row.appendChild(cod_Carrera);
 
-        const celldni = document.createElement('td');
+        const nombreCor = document.createElement('td');
         const apellidos = item.apellidos;
-        celldni.textContent = item.nombre+" "+apellidos;
-        row.appendChild(celldni);
+        nombreCor.textContent = item.nombre+" "+apellidos;
+        row.appendChild(nombreCor);
 
-        const celldorsal = document.createElement('td');
-        celldorsal.textContent = item.dorsal;
-        row.appendChild(celldorsal);
+        const num_dortsal = document.createElement('td');
+        num_dortsal.textContent = item.dorsal;
+        row.appendChild(num_dortsal);
         
-        const celltiempo = document.createElement('td');
-        celltiempo.textContent = item.tiempo;
-        row.appendChild(celltiempo);
+        const tiempoCor = document.createElement('td');
+        tiempoCor.textContent = item.tiempo;
+        row.appendChild(tiempoCor);
 
         tableBody.appendChild(row);
     });
@@ -37,16 +36,9 @@ let currentPage = 1;
 const rowsPerPage = 5;
 let data = [];
 
-
-async function loadData() {
-    const response = await fetch('evento.json');
-    data = await response.json();
-    displayPage(currentPage);
-}
-
 function displayPage(page) {
     const tableBody = document.getElementById('data-table').getElementsByTagName('tbody')[0];
-    tableBody.innerHTML = ''; // Limpiar la tabla
+    tableBody.innerHTML = ''; 
 
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
@@ -55,23 +47,23 @@ function displayPage(page) {
     paginatedItems.forEach(item => {
         const row = document.createElement('tr');
 
-        const cellCod_carrera = document.createElement('td');
-        cellCod_carrera.textContent = item.codigo_carrera;
-        row.appendChild(cellCod_carrera);
+        const cod_Carrera = document.createElement('td');
+        cod_Carrera.textContent = item.codigo_carrera;
+        row.appendChild(cod_Carrera);
 
         
-        const celldni = document.createElement('td');
+        const nombreCor = document.createElement('td');
         const apellidos = item.apellidos;
-        celldni.textContent = item.nombre+" "+apellidos;
-        row.appendChild(celldni);
+        nombreCor.textContent = item.nombre+" "+apellidos;
+        row.appendChild(nombreCor);
 
-        const celldorsal = document.createElement('td');
-        celldorsal.textContent = item.dorsal;
-        row.appendChild(celldorsal);
+        const num_dortsal = document.createElement('td');
+        num_dortsal.textContent = item.dorsal;
+        row.appendChild(num_dortsal);
 
-        const celltiempo = document.createElement('td');
-        celltiempo.textContent = item.tiempo;
-        row.appendChild(celltiempo);
+        const tiempoCor = document.createElement('td');
+        tiempoCor.textContent = item.tiempo;
+        row.appendChild(tiempoCor);
 
         tableBody.appendChild(row);
     });
@@ -80,14 +72,18 @@ function displayPage(page) {
     document.getElementById('nextBtn').disabled = end >= data.length;
 }
 
+async function loadData() {
+    const response = await fetch('evento.json');
+    data = await response.json();
+    displayPage(currentPage);
+}
+
 function nextPage() {
     if (currentPage * rowsPerPage < data.length) {
         currentPage++;
         displayPage(currentPage);
     }
 }
-
-
 
 function prevPage() {
     if (currentPage > 1) {
