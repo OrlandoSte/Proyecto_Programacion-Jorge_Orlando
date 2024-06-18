@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,6 +27,9 @@ import javax.swing.table.DefaultTableModel;
 
 import com.mysql.cj.xdevapi.Statement;
 
+/**
+ * Método para mostrar los DatosCarrera que estan agregados a la base de datos
+ */
 public class DatosCarrera extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -31,6 +41,9 @@ public class DatosCarrera extends JFrame {
 	private Conexion conA = new Conexion();
 	private Connection con = conA.abrirConexion();
 
+	 /**
+     * Método para volver a la pantalla de administración y cerrar la actual.
+     */
 	public void volver() {
 		AñadirCarrera form = new AñadirCarrera();
 		form.setVisible(true);
@@ -66,7 +79,10 @@ public class DatosCarrera extends JFrame {
 
 		loadTableData();
 	}
-
+	/**
+	 * Carga los datos de la tabla "CARRERA" desde la base de datos y los agrega a un modelo de tabla.
+	 * @throws SQLException si ocurre un error al interactuar con la base de datos.
+	 */
 	private void loadTableData() {
 		try {
 

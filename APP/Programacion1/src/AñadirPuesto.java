@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,7 +24,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
-
+/**
+ * Añade una Persona cogiendo los datos introducidos en el formulario y lo
+ * agrega a la base de datos
+ */
 public class AñadirPuesto extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -28,9 +38,8 @@ public class AñadirPuesto extends JFrame {
 	private Connection con = conA.abrirConexion();
 
 	/**
-	 * Launch the application.
-	 */
-
+     * Método para volver a la pantalla de administración y cerrar la actual.
+     */
 
 	public void volver() {
 		Admin form = new Admin();
@@ -38,9 +47,6 @@ public class AñadirPuesto extends JFrame {
 		this.dispose();
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public AñadirPuesto() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 539, 214);

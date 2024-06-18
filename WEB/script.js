@@ -30,7 +30,7 @@ async function loadData() {
     });
 }
 
-window.onload = loadData;
+window.onload = loadDatas;
 
 let currentPage = 1;
 const rowsPerPage = 5;
@@ -72,7 +72,7 @@ function displayPage(page) {
     document.getElementById('nextBtn').disabled = end >= data.length;
 }
 
-async function loadData() {
+async function loadDatas() {
     const response = await fetch('evento.json');
     data = await response.json();
     displayPage(currentPage);

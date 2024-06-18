@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -28,6 +35,10 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 import javax.swing.JRadioButton;
 
+/**
+ * Añade una Persona cogiendo los datos introducidos en el formulario y lo
+ * agrega a la base de datos
+ */
 public class AñadirPersona extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -57,16 +68,18 @@ public class AñadirPersona extends JFrame {
 	private Conexion conA = new Conexion();
 	private Connection con = conA.abrirConexion();
 
-	/**
-	 * Launch the application.
-	 */
+	 /**
+     * Método para volver a la pantalla de administración y cerrar la actual.
+     */
 
 	public void volver() {
 		Admin form = new Admin();
 		form.setVisible(true);
 		this.dispose();
 	}
-	
+	/**
+     * Método para abrir la ventana de datos de Persona y cerrar la actual.
+     */
 	public void DatosPersonasCorredoras() {
 		DatosPersonasCorredoras form = new DatosPersonasCorredoras();
 		form.setVisible(true);
@@ -74,10 +87,6 @@ public class AñadirPersona extends JFrame {
 	}
 
 
-
-	/**
-	 * Create the frame.
-	 */
 	public AñadirPersona() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 892, 553);
@@ -292,7 +301,9 @@ public class AñadirPersona extends JFrame {
 		btnVerPatrocinadores.setBounds(180, 455, 171, 25);
 		contentPane.add(btnVerPatrocinadores);
 	}
-
+	/**
+	 * Genera una lista de los Clubs que tenemos apuntados en la base de datos
+	 */
 	private void desplegableClub() {
 		try {
 
@@ -310,7 +321,9 @@ public class AñadirPersona extends JFrame {
 			System.out.println("Error al conectar a la base de datos: " + e.getMessage());
 		}
 	}
-
+	/**
+	 * Genera una lista de los Puestos que tenemos apuntados en la base de datos
+	 */
 	private void desplegablePuesto() {
 		try {
 
@@ -347,7 +360,11 @@ public class AñadirPersona extends JFrame {
 			return -1;
 		}
 	}
-
+	
+	/**
+	 * Metodo que calcula en la carrera que vas a participar a traves de la fecha de nacimiento del corredor
+	 * @return codigoChup
+	 */
 	public int calcularCarrera() {
 		try {
 

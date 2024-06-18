@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -19,7 +26,9 @@ import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
-
+/**
+ * Clase Login que proporciona la interfaz de inicio de sesión para administradores del sistema.
+ */
 public class Login extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -102,12 +111,20 @@ public class Login extends JFrame {
 		btnEntrar.setBounds(199, 91, 117, 25);
 		contentPane.add(btnEntrar);
 	}
-
+	/**
+	 * Método para abrir la ventana de administrador una vez que las credenciales son correctas.
+	 */
 	public void abrirAdmin() {
 		Admin form = new Admin();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+	 * Método que calcula el hash SHA-256 de una contraseña dada.
+	 * 
+	 * @param password Contraseña a ser hasheada.
+	 * @return String que representa el hash SHA-256 de la contraseña.
+	 */
 	public static String hashPassword(String password) {
         try {
             // Crear una instancia de MessageDigest con SHA-256

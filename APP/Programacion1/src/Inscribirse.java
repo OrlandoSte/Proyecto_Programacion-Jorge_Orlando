@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -26,7 +33,11 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
-
+/**
+ * Clase Inscribirse que representa una interfaz gráfica para la inscripción de personas en una carrera.
+ * Esta clase proporciona campos para ingresar los datos personales y botones para volver y completar la inscripción.
+ * Los datos se almacenan en una base de datos y se valida el DNI introducido.
+ */
 public class Inscribirse extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -45,6 +56,9 @@ public class Inscribirse extends JFrame {
 	private Conexion conA = new Conexion();
 	private Connection con = conA.abrirConexion();
 
+    /**
+     * Método para volver a la ventana principal del proyecto.
+     */
 	public void volver() {
 		ProyectoProgramacion form = new ProyectoProgramacion();
 		form.setVisible(true);
@@ -207,7 +221,9 @@ public class Inscribirse extends JFrame {
 		btnInscribirse.setBounds(386, 291, 117, 25);
 		contentPane.add(btnInscribirse);
 	}
-
+	 /**
+     * Método para rellenar el desplegable de Club con datos de la base de datos.
+     */
 	private void desplegableClub() {
 		try {
 
@@ -227,6 +243,12 @@ public class Inscribirse extends JFrame {
 		}
 	}
 
+    /**
+     * Método para calcular la edad en base a la fecha de nacimiento.
+     * 
+     * @param fechaNacimiento Fecha de nacimiento en formato yyyy-MM-dd.
+     * @return La edad calculada.
+     */
 	public int calcularEdad(String fechaNacimiento) {
 		try {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -243,7 +265,11 @@ public class Inscribirse extends JFrame {
 			return -1;
 		}
 	}
-
+    /**
+     * Método para calcular la carrera en base a la edad y sexo.
+     * 
+     * @return El código de la carrera.
+     */
 	public int calcularCarrera() {
 		try {
 

@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,7 +27,9 @@ import javax.swing.table.DefaultTableModel;
 
 import com.google.gson.Gson;
 import com.mysql.cj.xdevapi.Statement;
-
+/**
+ * Método para mostrar los CorredosActivos que estan agregados a la base de datos
+ */
 public class CorredoresActivos extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -54,7 +63,9 @@ public class CorredoresActivos extends JFrame {
 
 		loadTableData();
 	}
-
+	/**
+	 * Carga los datos de los Corredore en una tabla
+	 */
 	private void loadTableData() {
 		try {
 

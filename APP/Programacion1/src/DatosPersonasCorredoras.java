@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,7 +26,15 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import com.mysql.cj.xdevapi.Statement;
-
+/**
+ * Clase para gestionar la visualización de los datos de las personas corredoras.
+ * Esta clase extiende JFrame y muestra una tabla con la información de las personas y corredores.
+ * También proporciona opciones para volver a la pantalla de administración y abrir la ventana de validación.
+ * 
+ * @see ValidarInscripcion
+ * @see Admin
+ * @see Conexion
+ */
 public class DatosPersonasCorredoras extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -31,16 +46,19 @@ public class DatosPersonasCorredoras extends JFrame {
 	private Conexion conA = new Conexion();
 	private Connection con = conA.abrirConexion();
 
-	/**
-	 * Launch the application.
-	 */
-
+    /**
+     * Método para abrir la ventana de validación de inscripción.
+     * Cierra la ventana actual y abre la ventana de ValidarInscripcion.
+     */
 	public void abrirValidacion() {
 		ValidarInscripcion form=new ValidarInscripcion();
 		form.setVisible(true);
 		this.dispose();
 	}
-
+	 /**
+     * Método para abrir la ventana de administración.
+     * Cierra la ventana actual y abre la ventana de Admin.
+     */
 	public void abrirAdmin() {
 		Admin form = new Admin();
 		form.setVisible(true);
@@ -79,7 +97,10 @@ public class DatosPersonasCorredoras extends JFrame {
 
 		loadTableData();
 	}
-
+    /**
+     * Carga los datos de las tablas "PERSONA" y "CORREDOR" desde la base de datos y los agrega a un modelo de tabla.
+     * @throws SQLException si ocurre un error al interactuar con la base de datos.
+     */
 	private void loadTableData() {
 		try {
 
