@@ -1,25 +1,47 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    // Evitar el envío del formulario
-    event.preventDefault();
 
-    // Obtener valores de los campos
-    var email = document.getElementById('email').value;
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
+document.addEventListener('DOMContentLoaded', () => {
+    const emailInput = document.getElementById('email');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const submitButton = document.querySelector('button[type="submit"]');
+    const emailError = document.getElementById('emailError');
+    const usernameError = document.getElementById('usernameError');
+    const passwordError = document.getElementById('passwordError');
 
-    // Validar que los campos no estén vacíos
-    if (!email || !username || !password) {
-        alert('Por favor, completa todos los campos.');
-        return;
-    }
+    const validaremail = (email) => {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailPattern.test(email);
+    };
 
-    // Validar formato del correo electrónico
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        alert('Por favor, ingresa un correo electrónico válido.');
-        return;
-    }
+    const validarnombre = (username) => {
+        const usernamePattern = /^[a-zA-Z0-9]+$/;
+        return usernamePattern.test(username);
+    };
 
-    // Si todas las validaciones pasan, enviar el formulario
-    this.submit();
+    const validarpassword = (password) => {
+        return password.length >= 8 && password.length <= 16;
+    };
+
+    const validateForm = () => {
+        const emailcorrecto = validaremail(emailInput.value);
+        const usernamecorrecto = validarnombre(usernameInput.value);
+        const passwordcorrecto = validarpassword(passwordInput.value);
+        
+        emailError.textContent = emailcorrecto ? '' : 'Por favor, ingrese un email correcto.';
+        usernameError.textContent = usernamecorrecto ? '' : 'El nombre de usuario no debe tener caracteres especiales.';
+        passwordError.textContent = passwordcorrecto ? '' : 'La contrasena debe tener entre 8 y 16 caracteres.';
+
+        submitButton.disabled = !(emailcorrecto && usernamecorrecto && passwordcorrecto);
+    };
+
+    emailInput.addEventListener('keyup', validateForm);
+    usernameInput.addEventListener('keyup', validateForm);
+    passwordInput.addEventListener('keyup', validateForm);
+
+    submitButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (!submitButton.disabled) {
+            window.location.href = 'index.html';
+        }
+    });
 });

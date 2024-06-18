@@ -1,6 +1,6 @@
 
 async function loadData() {
-    const response = await fetch('evento.json');
+    const response = await fetch('carreras.json');
 
     const data = await response.json();
 
@@ -10,20 +10,20 @@ async function loadData() {
         const row = document.createElement('tr');
         
         const cod_Carrera = document.createElement('td');
-        cod_Carrera.textContent = item.codigo_carrera;
+        cod_Carrera.textContent = item.hora_comienzo;
         row.appendChild(cod_Carrera);
 
-        const nombreCor = document.createElement('td');
-        nombreCor.textContent = item.nombre+" "+apellidos;
-        row.appendChild(nombreCor);
+        const recorrido = document.createElement('td');
+        recorrido.textContent = item.cod_recorrido;
+        row.appendChild(recorrido);
 
-        const num_dortsal = document.createElement('td');
-        num_dortsal.textContent = item.dorsal;
-        row.appendChild(num_dortsal);
+        const sexoCarrera = document.createElement('td');
+        sexoCarrera.textContent = item.dorsal;
+        row.appendChild(sexoCarrera);
         
-        const tiempoCor = document.createElement('td');
-        tiempoCor.textContent = item.tiempo;
-        row.appendChild(tiempoCor);
+        const reglas = document.createElement('td');
+        reglas.textContent = item.tiempo;
+        row.appendChild(reglas);
 
         tableBody.appendChild(row);
     });
@@ -51,18 +51,21 @@ function displayPage(page) {
         row.appendChild(cod_Carrera);
 
         
-        const nombreCor = document.createElement('td');
-        const apellidos = item.apellidos;
-        nombreCor.textContent = item.nombre+" "+apellidos;
-        row.appendChild(nombreCor);
+        const recorrido = document.createElement('td');
+        recorrido.textContent = item.cod_recorrido;
+        row.appendChild(recorrido);
 
-        const num_dortsal = document.createElement('td');
-        num_dortsal.textContent = item.dorsal;
-        row.appendChild(num_dortsal);
+        const sexoCarrera = document.createElement('td');
+        sexoCarrera.textContent = item.sexo;
+        row.appendChild(sexoCarrera);
 
-        const tiempoCor = document.createElement('td');
-        tiempoCor.textContent = item.tiempo;
-        row.appendChild(tiempoCor);
+        const reglas = document.createElement('td');
+        reglas.textContent = item.regla;
+        row.appendChild(reglas);
+
+        const horaCom = document.createElement('td');
+        horaCom.textContent = item.hora_comienzo;
+        row.appendChild(horaCom);
 
         tableBody.appendChild(row);
     });
@@ -72,7 +75,7 @@ function displayPage(page) {
 }
 
 async function loadDatas() {
-    const response = await fetch('evento.json');
+    const response = await fetch('carreras.json');
     data = await response.json();
     displayPage(currentPage);
 }

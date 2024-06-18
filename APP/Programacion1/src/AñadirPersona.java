@@ -365,7 +365,7 @@ public class AñadirPersona extends JFrame {
 	 * Metodo que calcula en la carrera que vas a participar a traves de la fecha de nacimiento del corredor
 	 * @return codigoChup
 	 */
-	public int calcularCarrera() {
+	public int calcularCarrera(String fecha) {
 		try {
 
 			String query = "SELECT nombre FROM club";
@@ -542,13 +542,13 @@ public class AñadirPersona extends JFrame {
 				stm.executeUpdate();
 				JOptionPane.showMessageDialog(null, "Has añadido datos correctamente!");
 				if (rdbtnCorredor.isSelected()) {
-					calcularCarrera();
+					calcularCarrera(tFechaNacimiento.getText());
 					String insert2 = "INSERT INTO CORREDOR (club, dorsal, tiempo, codigo_carrera,codigo_persona,valido) VALUES (?,?,?,?,?,?)";
 					stmi = con.prepareStatement(insert2);
 					stmi.setInt(1, codigoClub);
 					stmi.setInt(2, idClienteUltimo + 1);
 					stmi.setString(3, null);
-					stmi.setInt(4, calcularCarrera());
+					stmi.setInt(4, calcularCarrera(tFechaNacimiento.getText()));
 					stmi.setInt(5, idClienteUltimo + 1);
 					stmi.setString(6, "t");
 					stmi.executeUpdate();

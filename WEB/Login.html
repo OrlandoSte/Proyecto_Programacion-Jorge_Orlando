@@ -9,15 +9,18 @@
 </head>
 <body>
 
-<div class="login">
-    <h1>Login</h1>
-    <form id="loginForm">
-        <input type="text" name="m" id="email" placeholder="E-Mail"  />
-        <input type="text" name="u" id="username" placeholder="Username"/>
-        <input type="password" name="p" id="password" placeholder="Password" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Entrar</button>
-    </form>
-</div>
+    <div class="login">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" name="m" id="email" placeholder="E-Mail" />
+            <div id="emailError" class="error-message"></div>
+            <input type="text" name="u" id="username" placeholder="Username"/>
+            <div id="usernameError" class="error-message"></div>
+            <input type="password" name="p" id="password" placeholder="Password"/>
+            <div id="passwordError" class="error-message"></div>
+            <button type="submit" class="btn btn-primary btn-block btn-large" disabled>Entrar</button>
+        </form>
+    </div>
 </body>
 </html>
 
