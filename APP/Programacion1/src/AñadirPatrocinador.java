@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +25,10 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
 
+/**
+ * Añade una Patrocinado cogiendo los datos introducidos en el formulario y lo
+ * agrega a la base de datos
+ */
 public class AñadirPatrocinador extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -31,21 +42,27 @@ public class AñadirPatrocinador extends JFrame {
 	private Conexion conA = new Conexion();
 	private Connection con = conA.abrirConexion();
 
-	/**
-	 * Launch the application.
-	 */
-
+	
+	 /**
+     * Método para volver a la pantalla de administración y cerrar la actual.
+     */
 
 	public void volver() {
 		Admin form = new Admin();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+     * Método para abrir la ventana de datos del patrocinador y cerrar la actual.
+     */
 	public void abrirDatosPatrocinador() {
 		DatosPatrocinador form = new DatosPatrocinador();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+     * Método para actualizar la ventana de añadir patrocinador .
+     */
 	public void AbrirPatrocinador() {
 		AñadirPatrocinador form = new AñadirPatrocinador();
 		form.setVisible(true);

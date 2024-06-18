@@ -1,5 +1,12 @@
-import java.awt.EventQueue;
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 
+import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -7,67 +14,98 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * Abre un menu de Administrador en el cual tienes las opciones como añadir, validar y modificar datos de la base de datos
+ * 
+ */
 public class Admin extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-
+/**
+ * Te abre la ventada de AñadirPatrocinador al clicar en el boton
+ */
 	public void abrirPatrocinador() {
 		AñadirPatrocinador form=new AñadirPatrocinador();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+	 * Te abre la ventada de AñadirCarrera al clicar en el boton
+	 */
 	public void abrirCarrera() {
 		AñadirCarrera form=new AñadirCarrera();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+	 * Te abre la ventada de AñadirCategoria al clicar en el boton
+	 */
 	public void abrirCategoria() {
 		AñadirCategoria form=new AñadirCategoria();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+	 * Te abre la ventada de AñadirClub al clicar en el boton
+	 */
 	public void abrirClub() {
 		AñadirClub form=new AñadirClub();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+	 * Te abre la ventada de AñadirRecorrido al clicar en el boton
+	 */
 	public void abrirRecorrido() {
 		AñadirRecorrido form=new AñadirRecorrido();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+	 * Te abre la ventada de AñadirPersona al clicar en el boton
+	 */
 	public void abrirPersona() {
 		AñadirPersona form=new AñadirPersona();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+	 * Te abre la ventada de AñadirPuesto al clicar en el boton
+	 */
 	public void abrirPuesto() {
 		AñadirPuesto form=new AñadirPuesto();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+	 * Te abre la ventada de AñadirAportacion al clicar en el boton
+	 */
 	public void abrirAportacion() {
 		AñadirAportacion form=new AñadirAportacion();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+	 * Te abre la ventada de ProyectoProgramacion al clicar en el boton
+	 */
 	public void abrirInicio() {
 		ProyectoProgramacion form=new ProyectoProgramacion();
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+	 * Te abre la ventada de ValidarInscripcion al clicar en el boton
+	 */
 	public void abrirValidacion() {
 		ValidarInscripcion form=new ValidarInscripcion();
 		form.setVisible(true);
 		this.dispose();
 	}
+
 	/**
-	 * Create the frame.
+	 * La ventana principal que tiene todos los botones
 	 */
 	public Admin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

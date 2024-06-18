@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,7 +15,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.ParseException;
-
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -20,6 +26,11 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
 
+/**
+ * 
+ * Añade una aportacion que se vinculara al Patrocinador seleccionado en el despleglable que se proporciona
+ * 
+ */
 public class AñadirAportacion extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -32,19 +43,18 @@ public class AñadirAportacion extends JFrame {
     private Connection con = conA.abrirConexion();
 
 	/**
-	 * Launch the application.
+	 * 
+	 * Vuelve atras de la pagina en la que se encuentra que en este caso volveria a
+	 * Admin()
+	 * 
 	 */
-
-
 	public void volver() {
 		Admin form = new Admin();
 		form.setVisible(true);
 		this.dispose();
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	
 	public AñadirAportacion() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 527, 264);
@@ -93,6 +103,9 @@ public class AñadirAportacion extends JFrame {
 
 		JButton btnAnadirAport = new JButton("Añadir");
 		btnAnadirAport.addActionListener(new ActionListener() {
+		/**
+		 * Inserta los datos que cogera del formulario a la base de datos
+		 */
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					
@@ -149,7 +162,9 @@ public class AñadirAportacion extends JFrame {
 		btnVolver.setBounds(378, 21, 117, 25);
 		contentPane.add(btnVolver);
 	}
-
+/**
+ * Genera una lista de los Patrocinadores que tenemos apuntados en la base de datos
+ */
 	private void desplegablePatrocinador() {
 		try {
 

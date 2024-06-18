@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,7 +26,11 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import com.mysql.cj.xdevapi.Statement;
-
+/**
+ * Clase que gestiona la validación y eliminación de inscripciones de corredores.
+ * Permite visualizar los datos de los corredores pendientes de validación y ofrece
+ * funcionalidades para marcar como válidas o eliminar inscripciones.
+ */
 public class ValidarInscripcion extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -32,7 +43,7 @@ public class ValidarInscripcion extends JFrame {
 	private Connection con = conA.abrirConexion();
 
 	/**
-	 * Launch the application.
+	 * Método para abrir la ventana de validación de inscripciones.
 	 */
 
 	public void abrirValidacion() {
@@ -40,7 +51,9 @@ public class ValidarInscripcion extends JFrame {
 		form.setVisible(true);
 		this.dispose();
 	}
-
+	/**
+	 * Método para abrir la ventana de administrador.
+	 */
 	public void abrirAdmin() {
 		Admin form = new Admin();
 		form.setVisible(true);
@@ -48,7 +61,7 @@ public class ValidarInscripcion extends JFrame {
 	}
 
 	/**
-	 * Create the frame.
+	 * Método para validar una inscripción de corredor.
 	 */
 	public ValidarInscripcion() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -158,7 +171,9 @@ public class ValidarInscripcion extends JFrame {
 
 		loadTableData();
 	}
-
+	/**
+	 * Carga los datos de los corredores pendientes de validación en la tabla.
+	 */
 	private void loadTableData() {
 		try {
 

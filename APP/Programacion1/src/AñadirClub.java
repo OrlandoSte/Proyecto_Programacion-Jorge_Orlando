@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +25,10 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.MaskFormatter;
 
+/**
+ * Añade una Club cogiendo los datos introducidos en el formulario y lo
+ * agrega a la base de datos
+ */
 public class AñadirClub extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -30,9 +41,11 @@ public class AñadirClub extends JFrame {
 	private Connection con = conA.abrirConexion();
 
 	/**
-	 * Launch the application.
+	 * 
+	 * Vuelve atras de la pagina en la que se encuentra que en este caso volveria a
+	 * Admin()
+	 * 
 	 */
-
 
 	public void volver() {
 		Admin form = new Admin();
@@ -40,9 +53,6 @@ public class AñadirClub extends JFrame {
 		this.dispose();
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public AñadirClub() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 545, 214);

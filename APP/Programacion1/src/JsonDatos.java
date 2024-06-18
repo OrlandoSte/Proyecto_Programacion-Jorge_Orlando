@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.FileWriter;
@@ -10,16 +17,24 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * Clase JsonDatos que se encarga de exportar los datos de diferentes tablas de la base de datos a un archivo JSON.
+ */
 public class JsonDatos {
 
 	private static Conexion conA = new Conexion();
 	private Connection con = conA.abrirConexion();
-
+	   /**
+     * Constructor de la clase JsonDatos.
+     * 
+     * @param con Objeto de tipo Conexion que representa la conexión a la base de datos.
+     */
 	public JsonDatos(Conexion con) {
 		this.conA = con;
 	}
-
+	 /**
+     * Método para exportar los datos de diferentes tablas a un archivo JSON.
+     */
 	public void exportarEventoAJson() {
 		Map<String, List<Map<String, Object>>> eventoData = new HashMap<>();
 
@@ -42,7 +57,12 @@ public class JsonDatos {
 			e.printStackTrace();
 		}
 	}
-
+	 /**
+     * Método privado para obtener los datos de una tabla específica de la base de datos.
+     * 
+     * @param nombreTabla Nombre de la tabla de la cual se desean obtener los datos.
+     * @return Lista de mapas que contienen los datos de la tabla especificada.
+     */
 	private List<Map<String, Object>> datosTabla(String nombreTabla) {
 		List<Map<String, Object>> tablaData = new ArrayList<>();
 
@@ -64,7 +84,11 @@ public class JsonDatos {
 
 		return tablaData;
 	}
-
+	 /**
+     * Método privado para obtener los datos específicos de corredores y las personas asociadas.
+     * 
+     * @return Lista de mapas que contienen los datos de los corredores y las personas asociadas.
+     */
 	private List<Map<String, Object>> obtenerDatosDeCorredores() {
 		List<Map<String, Object>> corredoresData = new ArrayList<>();
 
@@ -86,7 +110,11 @@ public class JsonDatos {
 
 		return corredoresData;
 	}
-
+	 /**
+     * Método privado para obtener las calificaciones de los corredores ordenadas por tiempo.
+     * 
+     * @return Lista de mapas que contienen las calificaciones de los corredores ordenadas por tiempo.
+     */
 	private List<Map<String, Object>> calificacionesCorredo() {
 		List<Map<String, Object>> calificacionesData = new ArrayList<>();
 

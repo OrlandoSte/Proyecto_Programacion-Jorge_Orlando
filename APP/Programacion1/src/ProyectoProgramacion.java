@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -7,14 +14,16 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
-
+/**
+ * Clase principal que inicia la aplicación de gestión de inscripciones y administración.
+ */
 public class ProyectoProgramacion extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
-	 * Inicia la application.
+	 * Clase principal que inicia la aplicación.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -29,9 +38,8 @@ public class ProyectoProgramacion extends JFrame {
 		});
 	}
 	/**
-	 * Crear frame.
+	 * Método para abrir la ventana de inscripción.
 	 */
-	
 	public void abrirInscribirse() {
 		Inscribirse form=new Inscribirse();
 		form.setVisible(true);
@@ -43,6 +51,9 @@ public class ProyectoProgramacion extends JFrame {
 		form.setVisible(true);
 		this.dispose();
 	}
+	/**
+	 * Método para abrir la ventana de inicio de sesión para administradores.
+	 */
 	public void abrirLogin() {
 		Login form=new Login();
 		form.setVisible(true);

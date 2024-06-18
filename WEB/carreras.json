@@ -1,0 +1,82 @@
+[
+    {
+    "cod_categoria": 1,
+    "codigo_carrera": 1,
+    "cod_recorrido": 1,
+    "sexo": "Masculino",
+    "regla": "Regla 1",
+    "hora_comienzo": "08:00 AM"
+    },
+    {
+    "cod_categoria": 2,
+    "codigo_carrera": 2,
+    "cod_recorrido": 2,
+    "sexo": "Femenino",
+    "regla": "Regla 2",
+    "hora_comienzo": "09:00 AM"
+    },
+    {
+    "cod_categoria": 3,
+    "codigo_carrera": 3,
+    "cod_recorrido": 3,
+    "sexo": "Mixto",
+    "regla": "Regla 3",
+    "hora_comienzo": "10:00 AM"
+    },
+    {
+    "cod_categoria": 4,
+    "codigo_carrera": 4,
+    "cod_recorrido": 4,
+    "sexo": "Masculino",
+    "regla": "Regla 4",
+    "hora_comienzo": "11:00 AM"
+    },
+    {
+    "cod_categoria": 5,
+    "codigo_carrera": 5,
+    "cod_recorrido": 5,
+    "sexo": "Femenino",
+    "regla": "Regla 5",
+    "hora_comienzo": "12:00 PM"
+    },
+    {
+    "cod_categoria": 6,
+    "codigo_carrera": 6,
+    "cod_recorrido": 6,
+    "sexo": "Mixto",
+    "regla": "Regla 6",
+    "hora_comienzo": "01:00 PM"
+    },
+    {
+    "cod_categoria": 7,
+    "codigo_carrera": 7,
+    "cod_recorrido": 7,
+    "sexo": "Masculino",
+    "regla": "Regla 7",
+    "hora_comienzo": "02:00 PM"
+    },
+    {
+    "cod_categoria": 8,
+    "codigo_carrera": 8,
+    "cod_recorrido": 8,
+    "sexo": "Femenino",
+    "regla": "Regla 8",
+    "hora_comienzo": "03:00 PM"
+    },
+    {
+    "cod_categoria": 9,
+    "codigo_carrera": 9,
+    "cod_recorrido": 9,
+    "sexo": "Mixto",
+    "regla": "Regla 9",
+    "hora_comienzo": "04:00 PM"
+    },
+    {
+    "cod_categoria": 10,
+    "codigo_carrera": 10,
+    "cod_recorrido": 10,
+    "sexo": "Masculino",
+    "regla": "Regla 10",
+    "hora_comienzo": "05:00 PM"
+ }
+]

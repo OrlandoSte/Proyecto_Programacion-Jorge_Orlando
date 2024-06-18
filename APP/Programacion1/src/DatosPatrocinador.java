@@ -1,3 +1,10 @@
+/**
+ * @author Jorge Piquer Samper
+ * @author Orlando Stefan Ionus
+ * 
+ * @version 1.0
+ * 
+ */
 import java.awt.EventQueue;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,7 +26,9 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import com.mysql.cj.xdevapi.Statement;
-
+/**
+ * Clase para gestionar la visualización de los datos de patrocinadores.
+ */
 public class DatosPatrocinador extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -30,7 +39,9 @@ public class DatosPatrocinador extends JFrame {
 	private JTextField textField_1;
 	private Conexion conA = new Conexion();
 	private Connection con = conA.abrirConexion();
-
+	/**
+     * Método para abrir la ventana de datos de Persona y cerrar la actual.
+     */
 	public void volver() {
 		AñadirPatrocinador form = new AñadirPatrocinador();
 		form.setVisible(true);
@@ -66,7 +77,10 @@ public class DatosPatrocinador extends JFrame {
 
 		loadTableData();
 	}
-
+	  /**
+     * Carga los datos de la tabla "PATROCINADOR" desde la base de datos y los agrega a un modelo de tabla.
+     * @throws SQLException si ocurre un error al interactuar con la base de datos.
+     */
 	private void loadTableData() {
 		try {
 
